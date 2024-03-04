@@ -1,0 +1,35 @@
+.content {
+	-fx-padding: 10px;
+}
+
+.button-bar {
+	-fx-spacing: 6px;
+}
+
+.prompt {
+	-fx-font-size: 1.333em;
+}
+
+.kanji-box {
+	-fx-spacing: 5px;
+}
+
+.kanji {
+	-fx-font-size: 72px;
+}
+
+.kanji-container {
+	-fx-border-width: 2px;
+	-fx-border-stroke: solid;
+	-fx-border-color: gray;
+}
+
+.bigKanjiSquare {
+	-fx-border-width: 2px;
+	-fx-border-stroke: solid;
+	-fx-border-color: gray;
+}
+
+.smallKanjiSquares {
+	-fx-grid-lines-visible: true;
+}
