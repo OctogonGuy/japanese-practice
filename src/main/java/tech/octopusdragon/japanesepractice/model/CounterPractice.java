@@ -69,6 +69,7 @@ public class CounterPractice {
 	 */
 	public void setPromptLanguage(PromptLanguage promptLang) {
 		Userdata.getCounterPracticeData().setPromptLang(promptLang);
+		Userdata.save();
 	}
 	
 	/**

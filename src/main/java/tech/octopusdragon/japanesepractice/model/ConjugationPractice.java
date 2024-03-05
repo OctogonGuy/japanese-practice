@@ -54,6 +54,7 @@ public class ConjugationPractice {
 	 */
 	public void setPromptLanguage(PromptLanguage promptLang) {
 		Userdata.getConjugationPracticeData().setPromptLang(promptLang);
+		Userdata.save();
 	}
 	
 	/**
@@ -61,7 +62,7 @@ public class ConjugationPractice {
 	 */
 	public String prompt() {
 		String prompt = "";
-		switch (Userdata.getConjugationPracticeData().getPromptLang()) {
+		switch (getPromptLanguage()) {
 		case JAPANESE:
 			prompt = curVerb.getDictionaryForm();
 			break;

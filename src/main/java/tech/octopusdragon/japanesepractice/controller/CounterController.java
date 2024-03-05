@@ -45,12 +45,15 @@ public class CounterController {
 		switch (session.getPromptLanguage()) {
 		case JAPANESE:
 			japaneseRadioButton.setSelected(true);
+			session.setPromptLanguage(PromptLanguage.JAPANESE);
 			break;
 		case ENGLISH:
 			englishRadioButton.setSelected(true);
+			session.setPromptLanguage(PromptLanguage.ENGLISH);
 			break;
 		case RANDOM:
 			randomRadioButton.setSelected(true);
+			session.setPromptLanguage(PromptLanguage.RANDOM);
 			break;
 		}
 

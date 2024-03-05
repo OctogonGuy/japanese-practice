@@ -46,12 +46,15 @@ public class ConjugationController {
 		switch (session.getPromptLanguage()) {
 		case JAPANESE:
 			japaneseRadioButton.setSelected(true);
+			session.setPromptLanguage(PromptLanguage.JAPANESE);
 			break;
 		case ENGLISH:
 			englishRadioButton.setSelected(true);
+			session.setPromptLanguage(PromptLanguage.ENGLISH);
 			break;
 		case RANDOM:
 			randomRadioButton.setSelected(true);
+			session.setPromptLanguage(PromptLanguage.RANDOM);
 			break;
 		}
 
@@ -91,7 +94,7 @@ public class ConjugationController {
 	private void next() {
 		session.next();
 
-		dictionaryFormLabel.setText(session.getCurVerb().getDictionaryForm());
+		dictionaryFormLabel.setText(session.prompt());
 		conjugationLabel.setText(session.getCurConjugation().toString());
 		correctAnswerLabel.setVisible(false);
 		correctAnswerLabel.getStyleClass().remove("correct");
