@@ -6,6 +6,7 @@ import com.moji4j.MojiConverter;
 import com.moji4j.MojiDetector;
 
 import tech.octopusdragon.japanesepractice.model.CounterPractice;
+import tech.octopusdragon.japanesepractice.model.PromptLanguage;
 import tech.octopusdragon.japanesepractice.model.Userdata;
 
 import javafx.application.Platform;
@@ -13,12 +14,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 
 public class CounterController {
 	@FXML private Label curStreakLabel;
 	@FXML private Label highestStreakLabel;
+	@FXML private RadioButton japaneseRadioButton;
+	@FXML private RadioButton englishRadioButton;
+	@FXML private RadioButton randomRadioButton;
 	@FXML private Label kanjiRepresentationLabel;
 	@FXML private Label correctAnswerLabel;
 	@FXML private TextField answerTextField;
@@ -36,6 +41,18 @@ public class CounterController {
 		correctAnswerLabel.setVisible(false);
 		submitButton.defaultButtonProperty().bind(submitButton.disabledProperty().not().and(answerTextField.focusedProperty()));
 		nextButton.defaultButtonProperty().bind(submitButton.disabledProperty().and(nextButton.focusedProperty()));
+		
+		switch (session.getPromptLanguage()) {
+		case JAPANESE:
+			japaneseRadioButton.setSelected(true);
+			break;
+		case ENGLISH:
+			englishRadioButton.setSelected(true);
+			break;
+		case RANDOM:
+			randomRadioButton.setSelected(true);
+			break;
+		}
 
 		next();
 	}
@@ -65,12 +82,30 @@ public class CounterController {
 	private void next() {
 		session.next();
 
-		kanjiRepresentationLabel.setText(session.getKanjiRepresentation());
+		kanjiRepresentationLabel.setText(session.prompt());
 		correctAnswerLabel.setVisible(false);
 		answerTextField.clear();
 		answerTextField.setDisable(false);
 		submitButton.setDisable(false);
 		nextButton.setDisable(true);
+	}
+	
+	@FXML
+	private void changePromptLanguageToJapanese() {
+		session.setPromptLanguage(PromptLanguage.JAPANESE);
+		kanjiRepresentationLabel.setText(session.prompt());
+	}
+	
+	@FXML
+	private void changePromptLanguageToEnglish() {
+		session.setPromptLanguage(PromptLanguage.ENGLISH);
+		kanjiRepresentationLabel.setText(session.prompt());
+	}
+	
+	@FXML
+	private void changePromptLanguageToRandom() {
+		session.setPromptLanguage(PromptLanguage.RANDOM);
+		kanjiRepresentationLabel.setText(session.prompt());
 	}
 	
 	@FXML

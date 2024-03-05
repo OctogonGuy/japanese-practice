@@ -6,8 +6,12 @@
 	-fx-spacing: 6px;
 }
 
+.radio-button-bar {
+	-fx-spacing: 10px;
+}
+
 .prompt {
-	-fx-font-size: 1.333em;
+	-fx-font-size: 1.2em;
 }
 
 .kanji-box {

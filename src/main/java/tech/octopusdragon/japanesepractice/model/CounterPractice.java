@@ -1,6 +1,7 @@
 package tech.octopusdragon.japanesepractice.model;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  * Contains logic of counter practice session
@@ -48,10 +49,41 @@ public class CounterPractice {
 	}
 	
 	/**
-	 * @return the kanji representation of the current number + counter
+	 * @return the prompt language
 	 */
-	public String getKanjiRepresentation() {
-		return curCounter.getKanjiRepresentation(curNumber);
+	public PromptLanguage getPromptLanguage() {
+		return Userdata.getCounterPracticeData().getPromptLang();
+	}
+	
+	/**
+	 * Changes the prompt language
+	 * @param lang The desired prompt language
+	 */
+	public void setPromptLanguage(PromptLanguage promptLang) {
+		Userdata.getCounterPracticeData().setPromptLang(promptLang);
+	}
+	
+	/**
+	 * @return the current representation of the current number + counter
+	 */
+	public String prompt() {
+		String prompt = "";
+		switch (Userdata.getCounterPracticeData().getPromptLang()) {
+		case JAPANESE:
+			prompt = curCounter.getKanjiRepresentation(curNumber);
+			break;
+		case ENGLISH:
+			prompt = curCounter.getMeaning(curNumber);
+			break;
+		case RANDOM:
+			Random rand = new Random();
+			if (rand.nextBoolean())
+				prompt = curCounter.getKanjiRepresentation(curNumber);
+			else
+				prompt = curCounter.getMeaning(curNumber);
+			break;
+		}
+		return prompt;
 	}
 	
 	/**

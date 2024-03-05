@@ -8,6 +8,7 @@ package tech.octopusdragon.japanesepractice.model;
 public class CounterPracticeData {
 	private int curStreak;
 	private int highestStreak;
+	private PromptLanguage promptLang;
 	
 	/**
 	 * Initializes counter practice with no streaks
@@ -15,6 +16,7 @@ public class CounterPracticeData {
 	public CounterPracticeData() {
 		curStreak = 0;
 		highestStreak = 0;
+		promptLang = PromptLanguage.JAPANESE;
 	}
 	
 	/**
@@ -29,6 +31,20 @@ public class CounterPracticeData {
 	 */
 	public int getHighestStreak() {
 		return highestStreak;
+	}
+
+	/**
+	 * @return the prompt language
+	 */
+	public PromptLanguage getPromptLang() {
+		return promptLang;
+	}
+
+	/**
+	 * @param promptLang the prompt language to set
+	 */
+	public void setPromptLang(PromptLanguage promptLang) {
+		this.promptLang = promptLang;
 	}
 	
 	/**
