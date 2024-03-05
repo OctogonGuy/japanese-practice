@@ -5,6 +5,7 @@ import java.util.List;
 
 import tech.octopusdragon.japanesepractice.model.KanjiPractice;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -15,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 public class KanjiController {
@@ -29,12 +31,18 @@ public class KanjiController {
 	@FXML private Button correctButton;
 	@FXML private Button incorrectButton;
 	@FXML private Button showButton;
+	
+	private Font defaultKanjiFont;
 
 	private KanjiPractice session;
 
 	@FXML
 	private void initialize() {
 		session = new KanjiPractice();
+		
+		Platform.runLater(() -> {
+			defaultKanjiFont = characterText.getFont();
+		});
 		
 		List<Node> squares = new ArrayList<>();
 		squares.add(primarySquare);
@@ -124,5 +132,17 @@ public class KanjiController {
 	private void incorrect(ActionEvent event) {
 		session.incorrect();
 		nextKanji();
+	}
+	
+	@FXML
+	private void toggleStrokeOrder(MouseEvent event) {
+		if (session.isShowStrokeOrder()) {
+			session.setShowStrokeOrder(false);
+			characterText.setFont(defaultKanjiFont);
+		}
+		else {
+			session.setShowStrokeOrder(true);
+			characterText.setFont(Font.loadFont(getClass().getResourceAsStream("/fonts/KanjiStrokeOrders.ttf"), defaultKanjiFont.getSize()));
+		}
 	}
 }

@@ -27,7 +27,8 @@
 }
 
 .kanji {
-	-fx-font-size: 72px;
+	-fx-font-size: 68px;
+	-fx-font-family: 'UD Digi Kyokasho N-R';
 }
 
 .kanji-container {

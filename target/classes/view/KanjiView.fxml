@@ -103,7 +103,7 @@
                         </StackPane>
                      </children>
                   </GridPane>
-                  <StackPane fx:id="characterBox" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="kanji-container">
+                  <StackPane fx:id="characterBox" onMouseClicked="#toggleStrokeOrder" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="kanji-container">
                      <children>
                         <Text fx:id="characterText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="kanji" text="漢">
                   </Text>

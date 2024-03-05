@@ -8,6 +8,7 @@ package tech.octopusdragon.japanesepractice.model;
 public class KanjiPractice {
 	
 	private Kanji curKanji;
+	private boolean showStrokeOrder;
 	
 	/**
 	 * Moves on to the next kanji
@@ -39,6 +40,20 @@ public class KanjiPractice {
 	 */
 	public Kanji getCurKanji() {
 		return curKanji;
+	}
+
+	/**
+	 * @return whether stroke order is showing
+	 */
+	public boolean isShowStrokeOrder() {
+		return showStrokeOrder;
+	}
+
+	/**
+	 * @param showStrokeOrder whether to show stroke order
+	 */
+	public void setShowStrokeOrder(boolean showStrokeOrder) {
+		this.showStrokeOrder = showStrokeOrder;
 	}
 
 }
