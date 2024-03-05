@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tech.octopusdragon.japanesepractice.controller.ConjugationController">
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tech.octopusdragon.japanesepractice.controller.ConjugationController">
    <center>
       <VBox alignment="CENTER">
          <children>
@@ -33,10 +33,10 @@
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                </columnConstraints>
                <rowConstraints>
-                  <RowConstraints minHeight="10.0" percentHeight="40.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" percentHeight="10.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" percentHeight="10.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" percentHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" percentHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" percentHeight="15.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" percentHeight="15.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" percentHeight="15.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" percentHeight="20.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>

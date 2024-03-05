@@ -33,8 +33,8 @@
                   <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
                </columnConstraints>
                <rowConstraints>
-                  <RowConstraints minHeight="10.0" percentHeight="40.0" valignment="CENTER" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" percentHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" percentHeight="35.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" percentHeight="15.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" percentHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" percentHeight="20.0" vgrow="SOMETIMES" />
                </rowConstraints>
