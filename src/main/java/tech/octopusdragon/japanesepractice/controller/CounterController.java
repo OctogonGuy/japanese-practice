@@ -63,11 +63,13 @@ public class CounterController {
 	}
 
 	private void submit(String guess) {
-		session.submit(guess);
+		boolean correct = session.submit(guess);
 
 		curStreakLabel.setText(String.valueOf(Userdata.getCounterPracticeData().getCurStreak()));
 		highestStreakLabel.setText(String.valueOf(Userdata.getCounterPracticeData().getHighestStreak()));
 		correctAnswerLabel.setText(session.correctAnswersStr());
+		if (correct) correctAnswerLabel.getStyleClass().add("correct");
+		else correctAnswerLabel.getStyleClass().add("incorrect");
 		correctAnswerLabel.setVisible(true);
 		answerTextField.setDisable(true);
 		submitButton.setDisable(true);
@@ -84,6 +86,8 @@ public class CounterController {
 
 		kanjiRepresentationLabel.setText(session.prompt());
 		correctAnswerLabel.setVisible(false);
+		correctAnswerLabel.getStyleClass().remove("correct");
+		correctAnswerLabel.getStyleClass().remove("incorrect");
 		answerTextField.clear();
 		answerTextField.setDisable(false);
 		submitButton.setDisable(false);
@@ -122,6 +126,8 @@ public class CounterController {
 			if (hiraganaDiff.startsWith("っ") && new MojiDetector().hasLatin(hiraganaDiff)) return;
 			// Do nothing if ん without double n
 			if (hiraganaDiff.startsWith("ん") && (romajiDiff.equals("n") || romajiDiff.equals("m") || romajiDiff.equals("nm"))) return;
+			// Replace double n with ん
+			hiraganaDiff = hiraganaDiff.replace("っん", "ん");
 			int caretDistanceFromEnd = answerTextField.getText().length() - answerTextField.getCaretPosition();
 			answerTextField.replaceText(diffIndex, diffIndex + romajiDiff.length(), hiraganaDiff);
 			answerTextField.positionCaret(answerTextField.getText().length() - caretDistanceFromEnd);

@@ -64,11 +64,13 @@ public class ConjugationController {
 	}
 
 	private void submit(String guess) {
-		session.submit(guess);
+		boolean correct = session.submit(guess);
 
 		curStreakLabel.setText(String.valueOf(Userdata.getConjugationPracticeData().getCurStreak()));
 		highestStreakLabel.setText(String.valueOf(Userdata.getConjugationPracticeData().getHighestStreak()));
 		correctAnswerLabel.setText(session.correctAnswer());
+		if (correct) correctAnswerLabel.getStyleClass().addAll("correct");
+		else correctAnswerLabel.getStyleClass().add("incorrect");
 		correctAnswerLabel.setVisible(true);
 		answerTextField.setDisable(true);
 		submitButton.setDisable(true);
@@ -86,6 +88,8 @@ public class ConjugationController {
 		dictionaryFormLabel.setText(session.getCurVerb().getDictionaryForm());
 		conjugationLabel.setText(session.getCurConjugation().toString());
 		correctAnswerLabel.setVisible(false);
+		correctAnswerLabel.getStyleClass().remove("correct");
+		correctAnswerLabel.getStyleClass().remove("incorrect");
 		answerTextField.clear();
 		answerTextField.setDisable(false);
 		submitButton.setDisable(false);
@@ -124,6 +128,8 @@ public class ConjugationController {
 			if (hiraganaDiff.startsWith("っ") && new MojiDetector().hasLatin(hiraganaDiff)) return;
 			// Do nothing if ん without double n
 			if (hiraganaDiff.startsWith("ん") && (romajiDiff.equals("n") || romajiDiff.equals("m") || romajiDiff.equals("nm"))) return;
+			// Replace double n with ん
+			hiraganaDiff = hiraganaDiff.replace("っん", "ん");
 			int caretDistanceFromEnd = answerTextField.getText().length() - answerTextField.getCaretPosition();
 			answerTextField.replaceText(diffIndex, diffIndex + romajiDiff.length(), hiraganaDiff);
 			answerTextField.positionCaret(answerTextField.getText().length() - caretDistanceFromEnd);

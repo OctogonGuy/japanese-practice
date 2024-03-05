@@ -16,14 +16,22 @@ public class CounterPractice {
 	/**
 	 * Submits a guess of the reading of the current numeral + counter
 	 * @param guess The user's guess
+	 * @return whether the user guessed correctly
 	 */
-	public void submit(String guess) {
+	public boolean submit(String guess) {
+		boolean correct;
 		List<String> correctAnswer = correctAnswers();
-		if (correctAnswer.contains(guess))
+		if (correctAnswer.contains(guess)) {
 			Userdata.getCounterPracticeData().incrementStreak();
-		else
+			correct = true;
+		}
+		else {
 			Userdata.getCounterPracticeData().resetStreak();
+			correct = false;
+		}
 		Userdata.save();
+		
+		return correct;
 	}
 	
 	/**

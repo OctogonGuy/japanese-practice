@@ -15,14 +15,22 @@ public class ConjugationPractice {
 	/**
 	 * Submits a guess of the conjugated form of the current verb
 	 * @param guess The user's guess
+	 * @return whether the user guessed correctly
 	 */
-	public void submit(String guess) {
+	public boolean submit(String guess) {
+		boolean correct;
 		String correctAnswer = correctAnswer();
-		if (correctAnswer.equals(guess))
+		if (correctAnswer.equals(guess)) {
 			Userdata.getConjugationPracticeData().incrementStreak();
-		else
+			correct = true;
+		}
+		else {
 			Userdata.getConjugationPracticeData().resetStreak();
+			correct = false;
+		}
 		Userdata.save();
+		
+		return correct;
 	}
 	
 	/**
