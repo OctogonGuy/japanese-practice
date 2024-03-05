@@ -1,10 +1,14 @@
 package tech.octopusdragon.japanesepractice.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import tech.octopusdragon.japanesepractice.model.KanjiPractice;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
@@ -14,7 +18,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
 public class KanjiController {
-	private static final double BRUSH_SIZE = 3.0;
+	private static final double BRUSH_SIZE = 2.0;
 
 	@FXML private Label joyoGradeLabel;
 	@FXML private Canvas primarySquare;
@@ -31,6 +35,25 @@ public class KanjiController {
 	@FXML
 	private void initialize() {
 		session = new KanjiPractice();
+		
+		List<Node> squares = new ArrayList<>();
+		squares.add(primarySquare);
+		for (Node secondarySquareContainer : secondarySquares.getChildren())
+			squares.add(((Parent)secondarySquareContainer).getChildrenUnmodifiable().get(0));
+		squares.add(characterText);
+		for (Node square : squares) {
+			square.disabledProperty().addListener((obs, oldVal, newVal) -> {
+				if (newVal) {
+					square.getParent().getStyleClass().add("disabled-square");
+					square.getParent().getStyleClass().remove("enabled-square");
+				}
+				else {
+					square.getParent().getStyleClass().add("enabled-square");
+					square.getParent().getStyleClass().remove("disabled-square");
+				}
+			});
+		}
+		
 		nextKanji();
 	}
 
@@ -45,18 +68,22 @@ public class KanjiController {
 		joyoGradeLabel.setText(session.getCurKanji().getJoyoGrade());
 		meaningLabel.setText(session.getCurKanji().getMeaning());
 		readingLabel.setText(session.getCurKanji().getReading());
-		primarySquare.getGraphicsContext2D().clearRect(0, 0, primarySquare.getWidth(), primarySquare.getHeight());
 		correctButton.setVisible(false);
 		correctButton.setManaged(false);
 		incorrectButton.setVisible(false);
 		incorrectButton.setManaged(false);
 		showButton.setVisible(true);
 		showButton.setManaged(true);
-		for (Node secondarySquareNode : secondarySquares.getChildren()) {
-			if (!secondarySquareNode.getClass().equals(Canvas.class)) continue;
-			Canvas secondarySquare = (Canvas) secondarySquareNode;
+		
+		primarySquare.getGraphicsContext2D().clearRect(0, 0, primarySquare.getWidth(), primarySquare.getHeight());
+		primarySquare.setDisable(false);
+		for (Node secondarySquareContainer : secondarySquares.getChildren()) {
+			if (!((Parent)secondarySquareContainer).getChildrenUnmodifiable().get(0).getClass().equals(Canvas.class)) continue;
+			Canvas secondarySquare = (Canvas) ((Parent)secondarySquareContainer).getChildrenUnmodifiable().get(0);
 			(secondarySquare).getGraphicsContext2D().clearRect(0, 0, secondarySquare.getWidth(), secondarySquare.getHeight());
+			secondarySquare.setDisable(true);
 		}
+		characterText.setDisable(true);
 	}
 
 	/**
@@ -71,6 +98,14 @@ public class KanjiController {
 		incorrectButton.setManaged(true);
 		showButton.setVisible(false);
 		showButton.setManaged(false);
+		
+		primarySquare.setDisable(true);
+		for (Node secondarySquareContainer : secondarySquares.getChildren()) {
+			if (!((Parent)secondarySquareContainer).getChildrenUnmodifiable().get(0).getClass().equals(Canvas.class)) continue;
+			Canvas secondarySquare = (Canvas) ((Parent)secondarySquareContainer).getChildrenUnmodifiable().get(0);
+			secondarySquare.setDisable(false);
+		}
+		characterText.setDisable(false);
 	}
 
 	@FXML

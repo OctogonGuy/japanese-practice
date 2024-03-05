@@ -69,8 +69,14 @@ public class ConjugationController {
 		curStreakLabel.setText(String.valueOf(Userdata.getConjugationPracticeData().getCurStreak()));
 		highestStreakLabel.setText(String.valueOf(Userdata.getConjugationPracticeData().getHighestStreak()));
 		correctAnswerLabel.setText(session.correctAnswer());
-		if (correct) correctAnswerLabel.getStyleClass().addAll("correct");
-		else correctAnswerLabel.getStyleClass().add("incorrect");
+		if (correct) {
+			correctAnswerLabel.setText("⭕ " + correctAnswerLabel.getText());
+			correctAnswerLabel.getStyleClass().add("correct");
+		}
+		else {
+			correctAnswerLabel.setText("❌ " + correctAnswerLabel.getText());
+			correctAnswerLabel.getStyleClass().add("incorrect");
+		}
 		correctAnswerLabel.setVisible(true);
 		answerTextField.setDisable(true);
 		submitButton.setDisable(true);

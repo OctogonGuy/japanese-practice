@@ -11,7 +11,7 @@
 }
 
 .prompt {
-	-fx-font-size: 1.2em;
+	-fx-font-size: 1.5em;
 }
 
 .correct {
@@ -44,4 +44,12 @@
 
 .smallKanjiSquares {
 	-fx-grid-lines-visible: true;
+}
+
+.enabled-square {
+	-fx-background-color: white;
+}
+
+.disabled-square {
+	-fx-background-color: gainsboro;
 }

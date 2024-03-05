@@ -7,10 +7,13 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tech.octopusdragon.japanesepractice.controller.ConjugationController">
+<BorderPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tech.octopusdragon.japanesepractice.controller.ConjugationController">
    <center>
       <VBox alignment="CENTER">
          <children>
@@ -25,27 +28,41 @@
                   <RadioButton fx:id="randomRadioButton" focusTraversable="false" mnemonicParsing="false" onAction="#changePromptLanguageToRandom" text="ランダム" toggleGroup="$promptLanguage" />
                </children>
             </HBox>
-            <VBox alignment="CENTER" VBox.vgrow="SOMETIMES">
+            <GridPane VBox.vgrow="ALWAYS">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" percentHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" percentHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" percentHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" percentHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" percentHeight="20.0" vgrow="SOMETIMES" />
+               </rowConstraints>
                <children>
-                  <Label fx:id="dictionaryFormLabel" styleClass="prompt" text="辞書系" />
+                  <VBox alignment="CENTER" GridPane.rowIndex="1">
+                     <children>
+                        <Label fx:id="dictionaryFormLabel" styleClass="prompt" text="辞書系" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" GridPane.rowIndex="2">
+                     <children>
+                        <Label fx:id="conjugationLabel" text="活用" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" GridPane.rowIndex="3">
+                     <children>
+                        <Label fx:id="correctAnswerLabel" text="正解" />
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" GridPane.rowIndex="4">
+                     <children>
+                        <TextField fx:id="answerTextField" onKeyPressed="#convertRomajiToHiragana" promptText="活用形" />
+                        <Button fx:id="submitButton" focusTraversable="false" mnemonicParsing="false" onAction="#submit" text="🢒" />
+                     </children>
+                  </HBox>
                </children>
-            </VBox>
-            <VBox alignment="CENTER" VBox.vgrow="SOMETIMES">
-               <children>
-                  <Label fx:id="conjugationLabel" text="活用" />
-               </children>
-            </VBox>
-            <VBox alignment="CENTER" VBox.vgrow="SOMETIMES">
-               <children>
-                  <Label fx:id="correctAnswerLabel" text="正解" />
-               </children>
-            </VBox>
-            <HBox alignment="CENTER" VBox.vgrow="SOMETIMES">
-               <children>
-                  <TextField fx:id="answerTextField" onKeyPressed="#convertRomajiToHiragana" promptText="活用形" />
-                  <Button fx:id="submitButton" focusTraversable="false" mnemonicParsing="false" onAction="#submit" text="🢒" />
-               </children>
-            </HBox>
+            </GridPane>
          </children>
       </VBox>
    </center>

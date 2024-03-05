@@ -17,9 +17,9 @@
    <bottom>
       <HBox alignment="CENTER" styleClass="button-bar" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="incorrectButton" mnemonicParsing="false" onAction="#incorrect" text="不正解" />
+            <Button fx:id="incorrectButton" mnemonicParsing="false" onAction="#incorrect" styleClass="incorrect" text="不正解" />
             <Button fx:id="showButton" mnemonicParsing="false" onAction="#show" text="解答を表示" />
-            <Button fx:id="correctButton" mnemonicParsing="false" onAction="#correct" text="正解" />
+            <Button fx:id="correctButton" mnemonicParsing="false" onAction="#correct" styleClass="correct" text="正解" />
          </children>
       </HBox>
    </bottom>
@@ -32,9 +32,17 @@
       </HBox>
    </top>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <GridPane BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" percentHeight="80.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="20.0" vgrow="SOMETIMES" />
+         </rowConstraints>
          <children>
-            <HBox alignment="CENTER" minWidth="0.0" prefHeight="100.0" prefWidth="200.0" styleClass="kanji-box" VBox.vgrow="SOMETIMES">
+            <HBox alignment="CENTER" minWidth="0.0" prefHeight="100.0" prefWidth="200.0" styleClass="kanji-box" GridPane.columnSpan="2147483647">
                <children>
                   <StackPane maxHeight="-Infinity" maxWidth="-Infinity" styleClass="bigKanjiSquare">
                      <children>
@@ -53,17 +61,49 @@
                         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Canvas height="50.0" onMouseDragged="#draw" width="50.0" />
-                        <Canvas height="50.0" onMouseDragged="#draw" width="50.0" GridPane.columnIndex="1" />
-                        <Canvas height="50.0" onMouseDragged="#draw" width="50.0" GridPane.columnIndex="2" />
-                        <Canvas height="50.0" onMouseDragged="#draw" width="50.0" GridPane.columnIndex="3" />
-                        <Canvas height="50.0" onMouseDragged="#draw" width="50.0" GridPane.rowIndex="1" />
-                        <Canvas height="50.0" onMouseDragged="#draw" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Canvas height="50.0" onMouseDragged="#draw" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Canvas height="50.0" onMouseDragged="#draw" width="50.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <StackPane maxHeight="-Infinity" maxWidth="-Infinity">
+                           <children>
+                              <Canvas height="50.0" onMouseDragged="#draw" width="50.0" />
+                           </children>
+                        </StackPane>
+                        <StackPane maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="1">
+                           <children>
+                              <Canvas height="50.0" onMouseDragged="#draw" width="50.0" />
+                           </children>
+                        </StackPane>
+                        <StackPane maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="2">
+                           <children>
+                              <Canvas height="50.0" onMouseDragged="#draw" width="50.0" />
+                           </children>
+                        </StackPane>
+                        <StackPane maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="3">
+                           <children>
+                              <Canvas height="50.0" onMouseDragged="#draw" width="50.0" />
+                           </children>
+                        </StackPane>
+                        <StackPane maxHeight="-Infinity" maxWidth="-Infinity" GridPane.rowIndex="1">
+                           <children>
+                              <Canvas height="50.0" onMouseDragged="#draw" width="50.0" />
+                           </children>
+                        </StackPane>
+                        <StackPane maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <Canvas height="50.0" onMouseDragged="#draw" width="50.0" />
+                           </children>
+                        </StackPane>
+                        <StackPane maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <children>
+                              <Canvas height="50.0" onMouseDragged="#draw" width="50.0" />
+                           </children>
+                        </StackPane>
+                        <StackPane maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <children>
+                              <Canvas height="50.0" onMouseDragged="#draw" width="50.0" />
+                           </children>
+                        </StackPane>
                      </children>
                   </GridPane>
-                  <StackPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="kanji-container">
+                  <StackPane fx:id="characterBox" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="kanji-container">
                      <children>
                         <Text fx:id="characterText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="kanji" text="漢">
                   </Text>
@@ -71,27 +111,23 @@
                   </StackPane>
                </children>
             </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="SOMETIMES">
+            <VBox GridPane.rowIndex="1">
                <children>
-                  <VBox HBox.hgrow="SOMETIMES">
-                     <children>
-                        <Label text="意味：">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="meaningLabel" text="meaning" />
-                     </children>
-                  </VBox>
-                  <VBox HBox.hgrow="SOMETIMES">
-                     <children>
-                        <Label text="音訓：" />
-                        <Label fx:id="readingLabel" text="オン、くん" />
-                     </children>
-                  </VBox>
+                  <Label text="意味：">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="meaningLabel" text="meaning" />
                </children>
-            </HBox>
+            </VBox>
+            <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label text="音訓：" />
+                  <Label fx:id="readingLabel" text="オン、くん" />
+               </children>
+            </VBox>
          </children>
-      </VBox>
+      </GridPane>
    </center>
 </BorderPane>

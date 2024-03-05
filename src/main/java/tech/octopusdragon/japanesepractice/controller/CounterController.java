@@ -68,8 +68,14 @@ public class CounterController {
 		curStreakLabel.setText(String.valueOf(Userdata.getCounterPracticeData().getCurStreak()));
 		highestStreakLabel.setText(String.valueOf(Userdata.getCounterPracticeData().getHighestStreak()));
 		correctAnswerLabel.setText(session.correctAnswersStr());
-		if (correct) correctAnswerLabel.getStyleClass().add("correct");
-		else correctAnswerLabel.getStyleClass().add("incorrect");
+		if (correct) {
+			correctAnswerLabel.setText("⭕ " + correctAnswerLabel.getText());
+			correctAnswerLabel.getStyleClass().add("correct");
+		}
+		else {
+			correctAnswerLabel.setText("❌ " + correctAnswerLabel.getText());
+			correctAnswerLabel.getStyleClass().add("incorrect");
+		}
 		correctAnswerLabel.setVisible(true);
 		answerTextField.setDisable(true);
 		submitButton.setDisable(true);
