@@ -6,6 +6,7 @@ import com.moji4j.MojiConverter;
 import com.moji4j.MojiDetector;
 
 import tech.octopusdragon.japanesepractice.model.ConjugationPractice;
+import tech.octopusdragon.japanesepractice.model.PromptLanguage;
 import tech.octopusdragon.japanesepractice.model.Userdata;
 
 import javafx.application.Platform;
@@ -13,12 +14,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 
 public class ConjugationController {
 	@FXML private Label curStreakLabel;
 	@FXML private Label highestStreakLabel;
+	@FXML private RadioButton japaneseRadioButton;
+	@FXML private RadioButton englishRadioButton;
+	@FXML private RadioButton randomRadioButton;
 	@FXML private Label dictionaryFormLabel;
 	@FXML private Label conjugationLabel;
 	@FXML private Label correctAnswerLabel;
@@ -37,6 +42,18 @@ public class ConjugationController {
 		correctAnswerLabel.setVisible(false);
 		submitButton.defaultButtonProperty().bind(submitButton.disabledProperty().not().and(answerTextField.focusedProperty()));
 		nextButton.defaultButtonProperty().bind(submitButton.disabledProperty().and(nextButton.focusedProperty()));
+		
+		switch (session.getPromptLanguage()) {
+		case JAPANESE:
+			japaneseRadioButton.setSelected(true);
+			break;
+		case ENGLISH:
+			englishRadioButton.setSelected(true);
+			break;
+		case RANDOM:
+			randomRadioButton.setSelected(true);
+			break;
+		}
 
 		next();
 	}
@@ -73,6 +90,24 @@ public class ConjugationController {
 		answerTextField.setDisable(false);
 		submitButton.setDisable(false);
 		nextButton.setDisable(true);
+	}
+	
+	@FXML
+	private void changePromptLanguageToJapanese() {
+		session.setPromptLanguage(PromptLanguage.JAPANESE);
+		dictionaryFormLabel.setText(session.prompt());
+	}
+	
+	@FXML
+	private void changePromptLanguageToEnglish() {
+		session.setPromptLanguage(PromptLanguage.ENGLISH);
+		dictionaryFormLabel.setText(session.prompt());
+	}
+	
+	@FXML
+	private void changePromptLanguageToRandom() {
+		session.setPromptLanguage(PromptLanguage.RANDOM);
+		dictionaryFormLabel.setText(session.prompt());
 	}
 	
 	@FXML

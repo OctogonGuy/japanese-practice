@@ -1,5 +1,7 @@
 package tech.octopusdragon.japanesepractice.model;
 
+import java.util.Random;
+
 /**
  * Contains logic of conjugation practice session
  * @author Alex Gill
@@ -29,6 +31,44 @@ public class ConjugationPractice {
 	public void next() {
 		curVerb = Scheduler.nextVerb();
 		curConjugation = Scheduler.nextConjugation();
+	}
+	
+	/**
+	 * @return the prompt language
+	 */
+	public PromptLanguage getPromptLanguage() {
+		return Userdata.getConjugationPracticeData().getPromptLang();
+	}
+	
+	/**
+	 * Changes the prompt language
+	 * @param lang The desired prompt language
+	 */
+	public void setPromptLanguage(PromptLanguage promptLang) {
+		Userdata.getConjugationPracticeData().setPromptLang(promptLang);
+	}
+	
+	/**
+	 * @return the current representation of the current number + counter
+	 */
+	public String prompt() {
+		String prompt = "";
+		switch (Userdata.getConjugationPracticeData().getPromptLang()) {
+		case JAPANESE:
+			prompt = curVerb.getDictionaryForm();
+			break;
+		case ENGLISH:
+			prompt = curVerb.getMeaning();
+			break;
+		case RANDOM:
+			Random rand = new Random();
+			if (rand.nextBoolean())
+				prompt = curVerb.getDictionaryForm();
+			else
+				prompt = curVerb.getMeaning();
+			break;
+		}
+		return prompt;
 	}
 
 	/**
