@@ -183,7 +183,6 @@ public class Scheduler {
 			// Skip header
 			counterListFile.readLine();
 			while ((line = counterListFile.readLine()) != null) {
-				Counter counter = new Counter();
 				String[] tokens = line.split(",");
 				
 				String suffix = tokens[0];
@@ -191,6 +190,8 @@ public class Scheduler {
 				CounterType type = CounterType.valueOf(tokens[2]);
 				String meaningSingular = tokens[3];
 				String meaningPlural = tokens[4];
+				
+				Counter counter = new Counter(suffix);
 				
 				// Fill all numbers
 				for (Number number : numberList.values()) {
@@ -239,7 +240,7 @@ public class Scheduler {
 	
 	/**
 	 * Generates a random unlearned kanji from the lowest available joyo level
-	 * @return Kanji
+	 * @return Kanji The kanji to learn or null if all kanji have been learned
 	 */
 	public static Kanji nextLearnKanji() {
 		// Make list of unlearned kanji
@@ -250,12 +251,16 @@ public class Scheduler {
 			}
 		}
 		
+		// If list is empty, return null
+		if (unlearnedKanjiList.isEmpty())
+			return null;
+		
 		// Narrow list to unlearned kanji of lowest available joyo level
 		int lowestJoyoLevel = Integer.MAX_VALUE;
 		List<Kanji> lowestLevelKanjiList = new ArrayList<>();
 		for (Kanji kanji : unlearnedKanjiList) {
 			int joyoLevel = kanji.getJoyoGrade().equals("S")? 7 : Integer.parseInt(kanji.getJoyoGrade());
-			if (joyoLevel <= lowestJoyoLevel) {
+			if (joyoLevel < lowestJoyoLevel) {
 				lowestJoyoLevel = joyoLevel;
 				lowestLevelKanjiList.clear();
 			}
@@ -272,7 +277,7 @@ public class Scheduler {
 	
 	/**
 	 * Generates a random kanji
-	 * @return Kanji
+	 * @return Kanji The kanji to review or null if there is none to review
 	 */
 	public static Kanji nextReviewKanji() {
 		// Make list of learned kanji
@@ -282,6 +287,10 @@ public class Scheduler {
 				learnedKanjiList.remove(kanji);
 			}
 		}
+		
+		// If list is empty, return null
+		if (learnedKanjiList.isEmpty())
+			return null;
 		
 		// Compute weighted number based on SRS stages
 		int totalWeight = 0;

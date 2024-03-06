@@ -10,6 +10,7 @@ import java.util.Map;
  *
  */
 public class Counter {
+	private String counterStr;
 	// All number + counter combination kanji
 	private Map<Integer, String> kanjiRepresentations;
 	// All number + counter combination readings
@@ -17,7 +18,8 @@ public class Counter {
 	// All English number + counter words
 	private Map<Integer, String> meanings;
 	
-	public Counter() {
+	public Counter(String counterStr) {
+		this.counterStr = counterStr;
 		kanjiRepresentations = new HashMap<Integer, String>();
 		readings = new HashMap<Integer, List<String>>();
 		meanings = new HashMap<Integer, String>();
@@ -56,5 +58,10 @@ public class Counter {
 		kanjiRepresentations.put(number, kanji);
 		readings.put(number, kana);
 		meanings.put(number, meaning);
+	}
+	
+	@Override
+	public String toString() {
+		return counterStr;
 	}
 }

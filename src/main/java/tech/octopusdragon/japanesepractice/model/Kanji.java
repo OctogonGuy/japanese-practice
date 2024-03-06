@@ -54,4 +54,9 @@ public class Kanji {
 	public String getReading() {
 		return reading;
 	}
+	
+	@Override
+	public String toString() {
+		return Character.toString(character);
+	}
 }

@@ -13,7 +13,7 @@ public abstract class KanjiPractice {
 	/**
 	 * Moves on to the next kanji
 	 */
-	public abstract void next();
+	public abstract Kanji next();
 	
 	/**
 	 * Records that the user correctly wrote the kanji and updates spaced

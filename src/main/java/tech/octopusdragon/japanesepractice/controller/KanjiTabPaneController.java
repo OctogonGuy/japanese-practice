@@ -5,17 +5,26 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.control.Tab;
 import javafx.scene.layout.AnchorPane;
 
 public class KanjiTabPaneController {
+	
 	@FXML private AnchorPane learnKanjiContainer;
 	@FXML private AnchorPane reviewKanjiContainer;
+	@FXML private Tab learnTab;
+	@FXML private Tab reviewTab;
 	
 	@FXML
 	public void initialize() {
 		// Load learn kanji tab
 		FXMLLoader learnViewLoader = new FXMLLoader(getClass().getResource("/view/KanjiView.fxml"));
-		learnViewLoader.setController(new LearnKanjiController());
+		KanjiController learnKanjiController = new LearnKanjiController();
+		learnTab.setOnSelectionChanged(event -> {
+			if (((Tab)event.getSource()).isSelected())
+				learnKanjiController.nextKanji();
+		});
+		learnViewLoader.setController(learnKanjiController);
 		try {
 			Node learnView = learnViewLoader.load();
 			learnKanjiContainer.getChildren().add(learnView);
@@ -29,7 +38,12 @@ public class KanjiTabPaneController {
 
 		// Load review kanji tab
 		FXMLLoader reviewViewLoader = new FXMLLoader(getClass().getResource("/view/KanjiView.fxml"));
-		reviewViewLoader.setController(new ReviewKanjiController());
+		KanjiController reviewKanjiController = new ReviewKanjiController();
+		reviewTab.setOnSelectionChanged(event -> {
+			if (((Tab)event.getSource()).isSelected())
+				reviewKanjiController.nextKanji();
+		});
+		reviewViewLoader.setController(reviewKanjiController);
 		try {
 			Node reviewView = reviewViewLoader.load();
 			reviewKanjiContainer.getChildren().add(reviewView);

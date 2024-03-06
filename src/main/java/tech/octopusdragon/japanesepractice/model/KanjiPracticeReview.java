@@ -7,7 +7,8 @@ package tech.octopusdragon.japanesepractice.model;
  */
 public class KanjiPracticeReview extends KanjiPractice {
 	@Override
-	public void next() {
+	public Kanji next() {
 		curKanji = Scheduler.nextReviewKanji();
+		return curKanji;
 	}
 }

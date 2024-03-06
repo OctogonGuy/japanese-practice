@@ -107,4 +107,9 @@ public class Verb {
 		}
 		return suffix;
 	}
+	
+	@Override
+	public String toString() {
+		return dictionaryForm;
+	}
 }

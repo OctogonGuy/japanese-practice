@@ -3,6 +3,7 @@ package tech.octopusdragon.japanesepractice.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import tech.octopusdragon.japanesepractice.model.Kanji;
 import tech.octopusdragon.japanesepractice.model.KanjiPractice;
 
 import javafx.application.Platform;
@@ -16,18 +17,23 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
-public class KanjiController {
+public abstract class KanjiController {
 	private static final double BRUSH_SIZE = 2.0;
 
+	@FXML private HBox joyoGradeBox;
 	@FXML private Label joyoGradeLabel;
+	@FXML private Label messageLabel;
+	@FXML private GridPane infoPane;
 	@FXML private Canvas primarySquare;
 	@FXML private GridPane secondarySquares;
 	@FXML private Text characterText;
 	@FXML private Label meaningLabel;
 	@FXML private Label readingLabel;
+	@FXML private HBox buttonBar;
 	@FXML private Button correctButton;
 	@FXML private Button incorrectButton;
 	@FXML private Button showButton;
@@ -37,7 +43,7 @@ public class KanjiController {
 	protected KanjiPractice session;
 
 	@FXML
-	private void initialize() {
+	protected void initialize() {
 		Platform.runLater(() -> {
 			defaultKanjiFont = characterText.getFont();
 		});
@@ -66,8 +72,23 @@ public class KanjiController {
 	/**
 	 * Advances the next kanji
 	 */
-	private void nextKanji() {
-		session.next();
+	public void nextKanji() {
+		Kanji curKanji = session.next();
+		
+		if (curKanji == null) {
+			joyoGradeBox.setVisible(false);
+			infoPane.setVisible(false);
+			buttonBar.setVisible(false);
+			messageLabel.setText(noKanjiMessage());
+			messageLabel.setVisible(true);
+			return;
+		}
+		else if (messageLabel.isVisible()) {
+			joyoGradeBox.setVisible(true);
+			infoPane.setVisible(true);
+			buttonBar.setVisible(true);
+			messageLabel.setVisible(false);
+		}
 
 		characterText.setText(Character.toString(session.getCurKanji().getCharacter()));
 		characterText.setVisible(false);
@@ -143,4 +164,9 @@ public class KanjiController {
 			characterText.setFont(Font.loadFont(getClass().getResourceAsStream("/fonts/KanjiStrokeOrders.ttf"), defaultKanjiFont.getSize()));
 		}
 	}
+	
+	/**
+	 * @return A message indicating there are no kanji available
+	 */
+	protected abstract String noKanjiMessage();
 }
