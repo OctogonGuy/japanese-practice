@@ -34,12 +34,10 @@ public class KanjiController {
 	
 	private Font defaultKanjiFont;
 
-	private KanjiPractice session;
+	protected KanjiPractice session;
 
 	@FXML
 	private void initialize() {
-		session = new KanjiPractice();
-		
 		Platform.runLater(() -> {
 			defaultKanjiFont = characterText.getFont();
 		});

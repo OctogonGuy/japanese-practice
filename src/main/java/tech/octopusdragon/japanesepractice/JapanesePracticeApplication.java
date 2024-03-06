@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 public class JapanesePracticeApplication extends Application {
 	
 	private static final double MIN_WIDTH = 475.0;	// Minimum stage width
-	private static final double MIN_HEIGHT = 250.0;	// Minimum stage height
+	private static final double MIN_HEIGHT = 275.0;	// Minimum stage height
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {

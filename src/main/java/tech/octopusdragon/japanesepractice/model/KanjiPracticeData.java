@@ -5,8 +5,8 @@ import java.util.Map;
 
 public class KanjiPracticeData {
 	
-	private static final int STAGES = 5;		// Number of stages
-	private static final int INIT_STAGE = 3;	// Initial stage for all kanji
+	public static final int STAGES = 5;		// Number of stages
+	public static final int INIT_STAGE = 3;	// Initial stage for all kanji
 
 	private Map<Character, Integer> srsMap;	// Maps kanji to SRS stage
 
@@ -38,6 +38,13 @@ public class KanjiPracticeData {
 			srsMap.put(kanjiChar, INIT_STAGE - 1);
 		else
 			srsMap.put(kanjiChar, 1);
+	}
+	
+	/**
+	 * @return A map of kanji character keys and SRS stage values
+	 */
+	public Map<Character, Integer> kanjiMap() {
+		return new HashMap<Character, Integer>(srsMap);
 	}
 	
 }

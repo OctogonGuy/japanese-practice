@@ -5,17 +5,15 @@ package tech.octopusdragon.japanesepractice.model;
  * @author Alex Gill
  *
  */
-public class KanjiPractice {
+public abstract class KanjiPractice {
 	
-	private Kanji curKanji;
+	protected Kanji curKanji;
 	private boolean showStrokeOrder;
 	
 	/**
 	 * Moves on to the next kanji
 	 */
-	public void next() {
-		curKanji = Scheduler.nextKanji();
-	}
+	public abstract void next();
 	
 	/**
 	 * Records that the user correctly wrote the kanji and updates spaced

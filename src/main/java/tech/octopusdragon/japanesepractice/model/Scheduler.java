@@ -238,13 +238,68 @@ public class Scheduler {
 	
 	
 	/**
+	 * Generates a random unlearned kanji from the lowest available joyo level
+	 * @return Kanji
+	 */
+	public static Kanji nextLearnKanji() {
+		// Make list of unlearned kanji
+		List<Kanji> unlearnedKanjiList = new ArrayList<>(kanjiList.values());
+		for (Kanji kanji : kanjiList.values()) {
+			if (Userdata.getKanjiPracticeData().kanjiMap().keySet().contains(kanji.getCharacter())) {
+				unlearnedKanjiList.remove(kanji);
+			}
+		}
+		
+		// Narrow list to unlearned kanji of lowest available joyo level
+		int lowestJoyoLevel = Integer.MAX_VALUE;
+		List<Kanji> lowestLevelKanjiList = new ArrayList<>();
+		for (Kanji kanji : unlearnedKanjiList) {
+			int joyoLevel = kanji.getJoyoGrade().equals("S")? 7 : Integer.parseInt(kanji.getJoyoGrade());
+			if (joyoLevel <= lowestJoyoLevel) {
+				lowestJoyoLevel = joyoLevel;
+				lowestLevelKanjiList.clear();
+			}
+			if (joyoLevel == lowestJoyoLevel) {
+				lowestLevelKanjiList.add(kanji);
+			}
+		}
+		
+		// Choose and return random kanji of lowest joyo level
+		Random rand = new Random();
+		return lowestLevelKanjiList.get(rand.nextInt(lowestLevelKanjiList.size()));
+	}
+	
+	
+	/**
 	 * Generates a random kanji
 	 * @return Kanji
 	 */
-	public static Kanji nextKanji() {
+	public static Kanji nextReviewKanji() {
+		// Make list of learned kanji
+		List<Kanji> learnedKanjiList = new ArrayList<>(kanjiList.values());
+		for (Kanji kanji : kanjiList.values()) {
+			if (!Userdata.getKanjiPracticeData().kanjiMap().keySet().contains(kanji.getCharacter())) {
+				learnedKanjiList.remove(kanji);
+			}
+		}
+		
+		// Compute weighted number based on SRS stages
+		int totalWeight = 0;
+		for (Kanji kanji : learnedKanjiList) {
+			int srsStage = Userdata.getKanjiPracticeData().kanjiMap().get(kanji.getCharacter());
+			totalWeight += KanjiPracticeData.STAGES - (srsStage - 1);
+		}
+		
+		// Choose weighted random kanji
+		int index = 0;
 		Random rand = new Random();
-		Kanji kanji = kanjiList.values().toArray(new Kanji[0])[rand.nextInt(kanjiList.size())];
-		return kanji;
+		for (int r = rand.nextInt(totalWeight); index < learnedKanjiList.size(); index++) {
+			int srsStage = Userdata.getKanjiPracticeData().kanjiMap().get(learnedKanjiList.get(index).getCharacter());
+			int weight = KanjiPracticeData.STAGES - (srsStage - 1);
+			r -= weight;
+			if (r < 0) break;
+		}
+		return learnedKanjiList.get(index);
 	}
 	
 	
