@@ -12,7 +12,7 @@ import javafx.stage.Stage;
  *
  */
 public class JapanesePracticeApplication extends Application {
-	
+
 	private static final double MIN_WIDTH = 475.0;	// Minimum stage width
 	private static final double MIN_HEIGHT = 275.0;	// Minimum stage height
 
@@ -26,11 +26,11 @@ public class JapanesePracticeApplication extends Application {
 		primaryStage.show();
 		setMinWindowSize(primaryStage);
 	}
-	
+
 	public static void main(String[] args) {
 		launch(args);
 	}
-	
+
 	/**
 	 * Prevents window from shrinking past certain point
 	 * @param stage The stage
@@ -42,7 +42,7 @@ public class JapanesePracticeApplication extends Application {
 		double windowHeight = stage.getScene().getWindow().getHeight();
 		double stageWidth = stage.getScene().getWidth();
 		double stageHeight = stage.getScene().getHeight();
-		
+
 		// Calculate top, bottom, left, and right window insets
 		double leftInsets = sceneX;
 		double topInsets = sceneY;

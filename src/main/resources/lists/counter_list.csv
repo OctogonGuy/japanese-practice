@@ -14,15 +14,9 @@
 年間,ねんかん,A2,year,years
 羽,わ,A4,bird,birds
 杯,はい,B1,cup,cups
-<<<<<<< HEAD
 匹,ひき,B1,small animal,small animals
 泊,はく,B2,night's stay,nights' stay
 分,ふん,B2,minute,minutes
-=======
-匹,ひき,B2,small animal,small animals
-泊,はく,C1,night's stay,nights' stay
-分,ふん,C1,minute,minutes
->>>>>>> temp
 ヶ月,かげつ,C1,month,months
 回,かい,C1,time (any number),times (any number)
 個,こ,C1,article,articles
@@ -30,9 +24,7 @@
 隻,せき,D1,ship,ships
 足,そく,D2,"pair (of shoes, socks, etc.)","pairs (of shoes, socks, etc.)"
 ポンド,ぽんど,E,pound,pounds
-<<<<<<< HEAD
 トン,とん,F,ton,tons
-=======
-トン,トン,F,ton,tons
->>>>>>> temp
 通,つう,F,message,messages
+軒,けん,C2,house,houses
+週間,しゅうかん,D1,week,weeks

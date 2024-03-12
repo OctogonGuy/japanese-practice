@@ -8,6 +8,7 @@ import tech.octopusdragon.japanesepractice.model.KanjiPractice;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -16,6 +17,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.TouchEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
@@ -39,11 +41,13 @@ public abstract class KanjiController {
 	@FXML private Button showButton;
 	
 	private Font defaultKanjiFont;
+	private double lastX, lastY;
 
 	protected KanjiPractice session;
 
 	@FXML
 	protected void initialize() {
+		lastX = lastY = Double.NaN;
 		Platform.runLater(() -> {
 			defaultKanjiFont = characterText.getFont();
 		});
@@ -134,11 +138,57 @@ public abstract class KanjiController {
 		}
 		characterText.setDisable(false);
 	}
+	
+	private void drawStart(Event event, double x, double y) {
+		GraphicsContext gc = ((Canvas) event.getSource()).getGraphicsContext2D();
+		double curX = x - BRUSH_SIZE/2;
+		double curY = y - BRUSH_SIZE/2;
+		gc.fillRect(curX, curY, BRUSH_SIZE, BRUSH_SIZE);
+		lastX = curX;
+		lastY = curY;
+	}
+	
+	private void draw(Event event, double x, double y) {
+		GraphicsContext gc = ((Canvas) event.getSource()).getGraphicsContext2D();
+		double curX = x - BRUSH_SIZE/2;
+		double curY = y - BRUSH_SIZE/2;
+		gc.strokeLine(lastX, lastY, curX, curY);
+		lastX = curX;
+		lastY = curY;
+	}
+	
+	private void drawRelease() {
+		lastX = lastY = Double.NaN;
+	}
 
 	@FXML
-	private void draw(MouseEvent event) {
-		GraphicsContext gc = ((Canvas) event.getSource()).getGraphicsContext2D();
-		gc.fillRect(event.getX() - BRUSH_SIZE/2, event.getY() - BRUSH_SIZE/2, BRUSH_SIZE, BRUSH_SIZE);
+	private void drawMouseStart(MouseEvent event) {
+		drawStart(event, event.getX(), event.getY());
+	}
+
+	@FXML
+	private void drawMouse(MouseEvent event) {
+		draw(event, event.getX(), event.getY());
+	}
+
+	@FXML
+	private void drawMouseRelease(MouseEvent event) {
+		drawRelease();
+	}
+
+	@FXML
+	private void drawTouchStart(TouchEvent event) {
+		drawStart(event, event.getTouchPoint().getX(), event.getTouchPoint().getY());
+	}
+
+	@FXML
+	private void drawTouch(TouchEvent event) {
+		draw(event, event.getTouchPoint().getX(), event.getTouchPoint().getY());
+	}
+
+	@FXML
+	private void drawTouchRelease(TouchEvent event) {
+		drawRelease();
 	}
 
 	@FXML

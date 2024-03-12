@@ -1,7 +1,7 @@
 ﻿Verb,Reading,Verb Group,Meaning
 書く,かく,GODAN,to write
 行く,いく,GODAN,to go
-話す,はなす,GODAN,to talk
+話す,はなす,GODAN,to speak; to talk
 待つ,まつ,GODAN,to wait
 死ぬ,しぬ,GODAN,to die
 読む,よむ,GODAN,to read
@@ -11,7 +11,20 @@
 泳ぐ,およぐ,GODAN,to swim
 呼ぶ,よぶ,GODAN,to call
 おっしゃる,おっしゃる,POLITE,to say (honorific)
-見る,みる,ICHIDAN,to see
-寝る,ねる,ICHIDAN,to go to bed
+見る,みる,ICHIDAN,to see; to look at; to watch
+寝る,ねる,ICHIDAN,to sleep; to go to bed
 する,する,SURU,to do
 来る,くる,KURU,to come
+帰る,かえる,GODAN,to come back; to return
+聞く,きく,GODAN,to listen; to hear
+飲む,のむ,GODAN,to drink
+起きる,おきる,ICHIDAN,to get up
+食べる,たべる,ICHIDAN,to eat
+会う,あう,GODAN,to meet
+書く,かく,GODAN,to write
+撮る,とる,GODAN,to take (a picture)
+分かる,わかる,GODAN,to understand
+いる,いる,ICHIDAN,to be (living)
+やる,やる,GODAN,to do (colloquial)
+出かける,でかける,ICHIDAN,to go out
+忘れる,わすれる,GODAN,to forget

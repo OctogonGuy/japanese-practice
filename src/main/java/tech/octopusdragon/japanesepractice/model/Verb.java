@@ -105,6 +105,9 @@ public class Verb {
 		if (suffix.contains("*")) {
 			suffix = suffix.replace("*", stem);
 		}
+		else if (suffix.equals("")) {
+			suffix = dictionaryForm;
+		}
 		return suffix;
 	}
 	

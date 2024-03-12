@@ -25,7 +25,7 @@ public class Scheduler {
 	private static final String NUMBER_LIST_FILENAME = "number_list.csv";
 	private static final String COUNTER_RULES_FILENAME = "counter_rules.csv";
 	
-	private static Map<Character, Kanji> kanjiList;
+	private static List<Kanji> kanjiList;
 	private static Map<String, Verb> verbList;
 	private static Map<String, Counter> counterList;
 	
@@ -41,8 +41,8 @@ public class Scheduler {
 	 * Reads kanji list file
 	 * @return Kanji list
 	 */
-	private static Map<Character, Kanji> readKanji() {
-		kanjiList = new HashMap<Character, Kanji>();
+	private static List<Kanji> readKanji() {
+		kanjiList = new ArrayList<Kanji>();
 		// Read kanji list file
 		try {
 			InputStream kanjiListInputStream =
@@ -63,7 +63,7 @@ public class Scheduler {
 				Kanji kanji = new Kanji(character, numStrokes, joyoGrade,meaning, reading);
 				
 				// Add kanji to list
-				kanjiList.put(character, kanji);
+				kanjiList.add(kanji);
 			}
 			kanjiListInputStream.close();
 		} catch (IOException e) {
@@ -244,8 +244,8 @@ public class Scheduler {
 	 */
 	public static Kanji nextLearnKanji() {
 		// Make list of unlearned kanji
-		List<Kanji> unlearnedKanjiList = new ArrayList<>(kanjiList.values());
-		for (Kanji kanji : kanjiList.values()) {
+		List<Kanji> unlearnedKanjiList = new ArrayList<>(kanjiList);
+		for (Kanji kanji : kanjiList) {
 			if (Userdata.getKanjiPracticeData().kanjiMap().keySet().contains(kanji.getCharacter())) {
 				unlearnedKanjiList.remove(kanji);
 			}
@@ -269,9 +269,8 @@ public class Scheduler {
 			}
 		}
 		
-		// Choose and return random kanji of lowest joyo level
-		Random rand = new Random();
-		return lowestLevelKanjiList.get(rand.nextInt(lowestLevelKanjiList.size()));
+		// Choose and return next kanji of lowest joyo level
+		return lowestLevelKanjiList.get(0);
 	}
 	
 	
@@ -281,8 +280,8 @@ public class Scheduler {
 	 */
 	public static Kanji nextReviewKanji() {
 		// Make list of learned kanji
-		List<Kanji> learnedKanjiList = new ArrayList<>(kanjiList.values());
-		for (Kanji kanji : kanjiList.values()) {
+		List<Kanji> learnedKanjiList = new ArrayList<>(kanjiList);
+		for (Kanji kanji : kanjiList) {
 			if (!Userdata.getKanjiPracticeData().kanjiMap().keySet().contains(kanji.getCharacter())) {
 				learnedKanjiList.remove(kanji);
 			}

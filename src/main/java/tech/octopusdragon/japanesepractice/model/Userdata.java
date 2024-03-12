@@ -2,18 +2,16 @@ package tech.octopusdragon.japanesepractice.model;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonIOException;
-import com.google.gson.JsonSyntaxException;
+import com.google.gson.JsonParseException;
 import com.google.gson.stream.JsonReader;
 
 /**
@@ -48,7 +46,7 @@ public class Userdata {
 		try {
 			userdata = gson.fromJson(new JsonReader(new InputStreamReader(new FileInputStream(
 					USERDATA_DIRECTORY + USERDATA_FILENAME), "UTF-8")), Userdata.class);
-		} catch (JsonIOException | JsonSyntaxException | UnsupportedEncodingException | FileNotFoundException e) {
+		} catch (JsonParseException | IOException e) {
 			userdata = new Userdata();
 		}
 	}

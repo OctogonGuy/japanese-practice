@@ -5,7 +5,7 @@ package tech.octopusdragon.japanesepractice.model;
  * @author Alex Gill
  *
  */
-public class Kanji {
+public class Kanji implements Comparable<Kanji> {
 	private final char character;
 	private final int numStrokes;
 	private final String joyoGrade;
@@ -58,5 +58,10 @@ public class Kanji {
 	@Override
 	public String toString() {
 		return Character.toString(character);
+	}
+
+	@Override
+	public int compareTo(Kanji o) {
+		return Character.compare(this.character, o.character);
 	}
 }

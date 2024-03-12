@@ -48,7 +48,7 @@
                      <children>
                         <StackPane maxHeight="-Infinity" maxWidth="-Infinity" styleClass="bigKanjiSquare">
                            <children>
-                              <Canvas fx:id="primarySquare" height="100.0" onMouseDragged="#draw" width="100.0" />
+                              <Canvas fx:id="primarySquare" height="100.0" onMouseClicked="#drawMouseStart" onMouseDragged="#drawMouse" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" width="100.0" />
                            </children>
                         </StackPane>
                         <GridPane fx:id="secondarySquares" maxHeight="-Infinity" maxWidth="-Infinity" styleClass="smallKanjiSquares">
@@ -65,42 +65,42 @@
                            <children>
                               <StackPane maxHeight="-Infinity" maxWidth="-Infinity">
                                  <children>
-                                    <Canvas height="50.0" onMouseDragged="#draw" width="50.0" />
+                                    <Canvas height="50.0" onMouseClicked="#drawMouseStart" onMouseDragged="#drawMouse" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" width="50.0" />
                                  </children>
                               </StackPane>
                               <StackPane maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="1">
                                  <children>
-                                    <Canvas height="50.0" onMouseDragged="#draw" width="50.0" />
+                                    <Canvas height="50.0" onMouseClicked="#drawMouseStart" onMouseDragged="#drawMouse" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" width="50.0" />
                                  </children>
                               </StackPane>
                               <StackPane maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="2">
                                  <children>
-                                    <Canvas height="50.0" onMouseDragged="#draw" width="50.0" />
+                                    <Canvas height="50.0" onMouseClicked="#drawMouseStart" onMouseDragged="#drawMouse" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" width="50.0" />
                                  </children>
                               </StackPane>
                               <StackPane maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="3">
                                  <children>
-                                    <Canvas height="50.0" onMouseDragged="#draw" width="50.0" />
+                                    <Canvas height="50.0" onMouseClicked="#drawMouseStart" onMouseDragged="#drawMouse" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" width="50.0" />
                                  </children>
                               </StackPane>
                               <StackPane maxHeight="-Infinity" maxWidth="-Infinity" GridPane.rowIndex="1">
                                  <children>
-                                    <Canvas height="50.0" onMouseDragged="#draw" width="50.0" />
+                                    <Canvas height="50.0" onMouseClicked="#drawMouseStart" onMouseDragged="#drawMouse" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" width="50.0" />
                                  </children>
                               </StackPane>
                               <StackPane maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <children>
-                                    <Canvas height="50.0" onMouseDragged="#draw" width="50.0" />
+                                    <Canvas height="50.0" onMouseClicked="#drawMouseStart" onMouseDragged="#drawMouse" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" width="50.0" />
                                  </children>
                               </StackPane>
                               <StackPane maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                  <children>
-                                    <Canvas height="50.0" onMouseDragged="#draw" width="50.0" />
+                                    <Canvas height="50.0" onMouseClicked="#drawMouseStart" onMouseDragged="#drawMouse" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" width="50.0" />
                                  </children>
                               </StackPane>
                               <StackPane maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="3" GridPane.rowIndex="1">
                                  <children>
-                                    <Canvas height="50.0" onMouseDragged="#draw" width="50.0" />
+                                    <Canvas height="50.0" onMouseClicked="#drawMouseStart" onMouseDragged="#drawMouse" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" width="50.0" />
                                  </children>
                               </StackPane>
                            </children>

@@ -134,7 +134,7 @@ public class ConjugationController {
 			String hiraganaDiff = StringUtils.difference(original, converted);
 			int diffIndex = StringUtils.indexOfDifference(original, converted);
 			// Do nothing if just small っ
-			if (hiraganaDiff.startsWith("っ") && new MojiDetector().hasLatin(hiraganaDiff)) return;
+			if (hiraganaDiff.startsWith("っ") && new MojiDetector().hasRomaji(hiraganaDiff)) return;
 			// Do nothing if ん without double n
 			if (hiraganaDiff.startsWith("ん") && (romajiDiff.equals("n") || romajiDiff.equals("m") || romajiDiff.equals("nm"))) return;
 			// Replace double n with ん
