@@ -281,7 +281,7 @@
 通う,かよう,GODAN,"to go to and from (a place), to go back and forth between, to run between (e.g. bus, train, etc.), to ply between; to go to (school, work, etc.), to attend, to commute, to frequent; to circulate (e.g. blood, electricity), to be communicated (e.g. thought); to resemble"
 騒ぐ,さわぐ,GODAN,"to make noise, to make racket, to be noisy; to rustle, to swoosh; to make merry; to clamor, to clamour, to make a fuss, to kick up a fuss; to lose one's cool, to panic, to act flustered; to feel tense, to be uneasy, to be excited"
 踏む,ふむ,GODAN,"to step on, to tread on, to trample on; to set foot on (e.g. foreign soil), to stand on, to visit; to experience, to undergo; to follow (rules, principles, etc.), to go through (e.g. formalities), to complete; to estimate, to guess, to judge, to value, to appraise; to rhyme; to succeed to (e.g. the throne)"
-侵入する,しっにゅうする,SURU,"invasion, incursion, raid, aggression, intrusion, trespass, penetration, hacking"
+侵入する,しんにゅうする,SURU,"invasion, incursion, raid, aggression, intrusion, trespass, penetration, hacking"
 冷える,ひえる,ICHIDAN,"to grow cold (from room temperature, e.g. in refrigerator), to get chilly, to cool down"
 切る,きる,GODAN,"to cut, to cut through, to perform (surgery); to sever (connections, ties); to turn off (e.g. the light); to terminate (e.g. a conversation), to hang up (the phone), to disconnect; to punch (a ticket), to tear off (a stub); to open (something sealed); to start; to set (a limit), to do (something) in less or within a certain time, to issue (cheques, vouchers, etc.); to reduce, to decrease, to discount; to shake off (water, etc.), to let drip-dry, to let drain; to cross, to traverse; to criticize sharply; to act decisively, to do (something noticeable), to go first, to make (certain facial expressions, in kabuki); to turn (vehicle, steering wheel, etc.); to curl (a ball), to bend, to cut; to shuffle (cards); to discard a tile; to dismiss, to sack, to let go, to expulse, to excommunicate; to dig (a groove), to cut (a stencil, on a mimeograph); to trump; to cut (the connection between two groups) (in go); to start a fire (with wood-wood friction or by striking a metal against stone); to draw (a shape) in the air (with a sword, etc.); to finish, to complete"
 飾る,かざる,GODAN,"to decorate, to ornament, to adorn; to display, to exhibit, to put on show, to arrange; to mark (e.g. the day with a victory), to adorn (e.g. the front page), to grace (e.g. the cover); to affect (a manner), to keep up (appearances), to embellish, to dress up, to be showy, to be pretentious"
@@ -503,9 +503,9 @@
 攻撃する,こうげきする,SURU,"attack, assault, raid, onslaught, offensive; criticism, censure, denunciation, condemnation"
 広告する,こうこくする,SURU,"advertisement, advertising; announcement, notice"
 署名する,しょめいする,SURU,signature
-テストする,てすとする,SURU,"examination, quiz, test (syn. 試験); test, tryout, trial; rehearsal (in filming)"
-プレゼントする,ぷれぜんとする,SURU,"present, gift"
-レポートする,れぽおとする,SURU,"report, paper; reportage"
+テストする,テストする,SURU,"examination, quiz, test (syn. 試験); test, tryout, trial; rehearsal (in filming)"
+プレゼントする,プレゼントする,SURU,"present, gift"
+レポートする,レポートする,SURU,"report, paper; reportage"
 駐車する,ちゅうしゃする,SURU,parking (e.g. car)
 いらっしゃる,いらっしゃる,POLITE,"to come, to go, to be (somewhere); to be (doing) [Honorific or respectful (sonkeigo) language]"
 証明する,しょうめいする,SURU,"proof, testimony, demonstration, verification, certification"
@@ -514,11 +514,11 @@
 競技する,きょうぎする,SURU,"game, match, contest"
 保証する,ほしょうする,SURU,"guarantee, security, assurance, pledge, warranty"
 投票する,とうひょうする,SURU,"voting, ballot, poll, vote"
-アルバイトする,あるばいとする,SURU,"part-time job, side job; part-time worker"
+アルバイトする,アルバイトする,SURU,"part-time job, side job; part-time worker"
 診察する,しんさつする,SURU,medical examination
-コピーする,こぴいする,SURU,"copy, photocopy; book jacket blurb; (advertising) slogan"
+コピーする,コピーする,SURU,"copy, photocopy; book jacket blurb; (advertising) slogan"
 離婚する,りこんする,SURU,divorce
-ファックスする,ふぁっくすする,SURU,"fax, facsimile; fax machine"
+ファックスする,ファックスする,SURU,"fax, facsimile; fax machine"
 販売する,はんばいする,SURU,"sales, selling, marketing"
 衝突する,しょうとつする,SURU,"collision, crash, impact, running into; conflict, clash, discord, quarrel"
 改造する,かいぞうする,SURU,"remodeling, remodelling, reconstruction, conversion, alteration, renovation, modification, reshuffling (e.g. a cabinet), reorganization, restructuring; modding"
@@ -728,7 +728,7 @@
 傾く,かたむく,GODAN,"to incline toward, to slant, to lurch, to heel over, to be disposed to, to trend toward, to be prone to; to go down (sun), to wane, to sink, to decline"
 留学する,りゅうがくする,SURU,"studying abroad; studying at a different school, etc. (usu. for a specific purpose)"
 意地悪する,いじわるする,SURU,"malicious, ill-tempered, unkind"
-反応する,はっのうする,SURU,"reaction, response"
+反応する,はんのうする,SURU,"reaction, response"
 曲げる,まげる,ICHIDAN,"to bend, to crook, to bow, to curve, to curl; to lean, to tilt, to incline, to slant; to bend (the truth), to distort, to twist, to pervert; to yield (a point), to depart (from a principle), to ignore (what one really thinks); to pawn"
 報道する,ほうどうする,SURU,"report (of news), reporting, news, information, (media) coverage"
 砕ける,くだける,ICHIDAN,"to break (into pieces), to be broken, to be smashed; to collapse, to crumble, to decline, to cool (e.g. enthusiasm), to dampen (e.g. one's will to fight); to become less formal, to throw off reserve, to become affable; to become easy to understand (e.g. a story); to be worried"
@@ -813,7 +813,7 @@
 日焼けする,ひやけする,SURU,"sunburn, suntan, tan; becoming discolored from the sun (e.g. of paper), yellowing; drying up (of a river, field, etc.)"
 変化する,へんかする,SURU,"change, variation, alteration, mutation, transition, transformation, transfiguration, metamorphosis; variety, diversity; inflection, declension, conjugation; sidestepping"
 広める,ひろめる,ICHIDAN,"to spread, to propagate, to popularize, to disseminate; to broaden, to extend, to widen, to enlarge"
-ご覧になる,ごらっになる,GODAN,"to see, to look, to watch; to try to [Honorific or respectful (sonkeigo) language]"
+ご覧になる,ごらんになる,GODAN,"to see, to look, to watch; to try to [Honorific or respectful (sonkeigo) language]"
 溶かす,とかす,GODAN,to dissolve; to melt
 恐れる,おそれる,ICHIDAN,"to fear, to be afraid of"
 整う,ととのう,GODAN,"to be ready, to be prepared, to be arranged; to be in order, to be put in order, to be well-ordered, to be well-proportioned, to be harmonious; to be adjusted, to be regulated, to be refined (e.g. of a face); to be settled (e.g. treaty, contract), to be completed"
@@ -967,7 +967,7 @@
 用いる,もちいる,ICHIDAN,"to use, to make use of, to utilize, to utilise"
 焦がす,こがす,GODAN,"to burn, to scorch, to singe, to char"
 差別する,さべつする,SURU,"distinction, differentiation, discrimination; discrimination (against people)"
-バランスする,ばらんすする,SURU,balance
+バランスする,バランスする,SURU,balance
 居住する,きょじゅうする,SURU,"residence, abode, dwelling"
 作曲する,さっきょくする,SURU,"composition (of music), setting, writing music"
 放射する,ほうしゃする,SURU,"radiation, emission"
@@ -986,12 +986,12 @@
 創造する,そうぞうする,SURU,creation; Creation (by God)
 協定する,きょうていする,SURU,"arrangement, pact, agreement"
 問う,とう,GODAN,"to ask, to inquire; to blame (someone) for, to accuse of, to pursue (question of responsibility), to charge with; to care about, to regard as important; to call into question, to doubt, to question"
-カバーする,かばあする,SURU,"cover, covering, dust jacket; cover song, cover version; coverage; to compensate for (a loss), to offset (a weakness), to back up"
+カバーする,カバーする,SURU,"cover, covering, dust jacket; cover song, cover version; coverage; to compensate for (a loss), to offset (a weakness), to back up"
 要望する,ようぼうする,SURU,"demand for, request"
 外出する,がいしゅつする,SURU,"going out, outing, leaving (one's home, office, etc.)"
 監視する,かんしする,SURU,"monitoring, watching, observation, surveillance, guarding, supervision, lookout"
-インタビューする,いんたびゅうする,SURU,"interview (i.e. television, newspaper, etc.)"
-案内する,あっないする,SURU,"guidance, leading (the way), showing around; information, notice, notification; announcement (of one's arrival); invitation; acquaintance, knowledge"
+インタビューする,インタビューする,SURU,"interview (i.e. television, newspaper, etc.)"
+案内する,あんないする,SURU,"guidance, leading (the way), showing around; information, notice, notification; announcement (of one's arrival); invitation; acquaintance, knowledge"
 唱える,となえる,ICHIDAN,"to recite, to chant; to cry, to yell, to shout; to advocate, to advance, to preach, to insist"
 発展する,はってんする,SURU,"development, growth, expansion, extension, flourishing; development (of a situation, story, etc.), advancement, progression, unfolding; playing around, having an active sex life"
 訴訟する,そしょうする,SURU,"litigation, lawsuit"
@@ -1051,7 +1051,7 @@
 離れる,はなれる,ICHIDAN,"to be separated, to be apart, to be distant; to leave, to go away; to leave (a job, etc.), to quit, to give up; to lose connection with, to drift away from"
 実行する,じっこうする,SURU,"execution (e.g. of a plan), carrying out, practice, action, implementation, fulfillment, realization"
 廃止する,はいしする,SURU,"abolition, discontinuance, discontinuation, repeal, annulment"
-スケジュールする,すけじゅうるする,SURU,schedule
+スケジュールする,スケジュールする,SURU,schedule
 望む,のぞむ,GODAN,"to desire; to wish for, to expect; to see, to command (a view of)"
 修理する,しゅうりする,SURU,"repair, mending, fixing, servicing"
 上昇する,じょうしょうする,SURU,"rising, ascending, climbing"
@@ -1329,11 +1329,11 @@
 刈る,かる,GODAN,"to cut (grass, hair, etc.), to mow, to clip, to trim, to prune, to shear, to reap, to harvest"
 運営する,うんえいする,SURU,"management, administration, operation"
 判定する,はんていする,SURU,"judgement, judgment, decision, ruling, finding, adjudication, verdict, call"
-メモする,めもする,SURU,"note, memo, memorandum"
+メモする,メモする,SURU,"note, memo, memorandum"
 囲む,かこむ,GODAN,"to surround, to encircle, to enclose, to fence, to wall in; to besiege, to lay siege to; to play (go, shogi, etc.)"
 帯びる,おびる,ICHIDAN,"to wear (sword, decoration, etc.), to carry; to be entrusted (e.g. with a mission), to take on; to have a trace of, to be tinged with"
 配置する,はいちする,SURU,"arrangement (of resources), deployment, stationing, posting, disposition, configuration, layout"
-スイッチする,すいっちする,SURU,switch
+スイッチする,スイッチする,SURU,switch
 保管する,ほかんする,SURU,"charge, custody, safekeeping, deposit, storage"
 飛び出す,とびだす,GODAN,"to jump out, to rush out, to fly out; to appear (suddenly); to protrude, to project; to butt in; to run away (e.g. from home), to break away, to cut ties with (e.g. workplace)"
 動揺する,どうようする,SURU,"shaking, trembling, pitching, rolling, oscillation; disturbance, unrest, agitation, excitement, commotion, turmoil, discomposure, feeling shaken"
@@ -1379,14 +1379,14 @@
 虐待する,ぎゃくたいする,SURU,"abuse, ill-treatment, maltreatment, mistreatment, cruelty"
 飼う,かう,GODAN,"to keep (a pet or other animal), to have, to own, to raise, to rear, to feed"
 去る,さる,GODAN,"to leave, to go away; to pass, to elapse; to be distant; to send away, to drive off, to divorce; to (do) completely; last ... (e.g. ""last April"")"
-サインする,さいんする,SURU,"autograph, signature; sign, signal, indication"
+サインする,サインする,SURU,"autograph, signature; sign, signal, indication"
 沈む,しずむ,GODAN,"to sink, to go under, to submerge; to go down (e.g. sun), to set, to descend; to feel depressed, to become subdued, to become somber"
-ミスする,みすする,SURU,"mistake (abbr.), error, blunder"
+ミスする,ミスする,SURU,"mistake (abbr.), error, blunder"
 輝く,かがやく,GODAN,"to shine, to glitter, to sparkle"
 願う,ねがう,GODAN,"to desire, to wish, to hope; to beg, to request, to implore, to pray; to have something done for oneself"
 取れる,とれる,ICHIDAN,"to come off, to be removed; to disappear (of pain, a fever, etc.); to be caught, to be harvested; to be interpreted (as), to be taken (as); to be attained (of balance, etc.); to be obtainable"
 似合う,にあう,GODAN,"to suit, to match, to become, to be like"
-マイナスする,まいなすする,SURU,"minus, subtraction, taking away; negative (number); deficit, loss; disadvantage, drawback, handicap; negative charge, cathode, negative terminal, negative pole; minus sign, negative sign; negative (image, effect, thinking, etc.), bad; negative (test result)"
+マイナスする,マイナスする,SURU,"minus, subtraction, taking away; negative (number); deficit, loss; disadvantage, drawback, handicap; negative charge, cathode, negative terminal, negative pole; minus sign, negative sign; negative (image, effect, thinking, etc.), bad; negative (test result)"
 招く,まねく,GODAN,"to invite, to ask; to beckon, to wave someone in, to gesture to; to call in, to send for, to summon; to bring on oneself, to cause, to incur, to lead to, to result in"
 改善する,かいぜんする,SURU,"betterment, improvement; kaizen (Japanese business philosophy of continuous improvement)"
 割る,わる,GODAN,"to divide; to cut, to halve, to separate, to split, to rip; to break, to crack, to smash; to dilute; to fall below; to discount; to step over (a line, etc.)"
@@ -1396,7 +1396,7 @@
 触れる,ふれる,ICHIDAN,"to touch, to feel; to touch (with); to experience, to come in contact with, to perceive; to touch on (a subject), to allude to, to refer to, to mention, to bring up; to be in conflict with, to violate (law, copyright, etc.), to infringe; to proclaim, to make known, to spread (e.g. a rumour)"
 感覚する,かんかくする,SURU,"sense, sensation, feeling, intuition"
 立ち上がる,たちあがる,GODAN,"to stand up, to get up; to rise; to recover; to take action, to start; to make the initial charge; to start up, to boot up"
-トレーニングする,とれえにんぐする,SURU,"training (for a skill, job, sport, etc.), practice; working out, workout, (strength, weight) training"
+トレーニングする,トレーニングする,SURU,"training (for a skill, job, sport, etc.), practice; working out, workout, (strength, weight) training"
 腐る,くさる,GODAN,"to rot, to go bad, to decay, to spoil, to fester, to decompose, to turn sour (e.g. milk); to corrode, to weather, to crumble; to become useless, to blunt, to weaken (from lack of practice); to become depraved, to be degenerate, to be morally bankrupt, to be corrupt; to be depressed, to be dispirited, to feel discouraged, to feel down; to have the audacity to, to be bastard enough to; to lose a bet; to be drenched, to become sopping wet"
 伺う,うかがう,GODAN,"to ask, to inquire, to hear, to be told; to implore (a god for an oracle), to seek direction (from your superior); to visit; to speak to (a large crowd at a theatre, etc.) [Humble (kenjougo) language]"
 通じる,つうじる,ICHIDAN,"to be open (to traffic), to lead to, to communicate (with); to flow (liquid, current), to pass, to get through to; to be understood, to be comprehended; to be honored, to be good; to be well versed in, to be well-informed; to communicate clandestinely, to keep in touch (e.g. with the enemy); to form a liaison, to be intimate; to spread widely, to disseminate"
@@ -1551,23 +1551,23 @@
 尽くす,つくす,GODAN,"to use up, to exhaust, to run out of; to devote oneself (to), to do one's utmost (for), to serve, to work (for a cause); to do to exhaustion, to do completely, to do fully"
 役立つ,やくだつ,GODAN,"to be useful, to be helpful, to serve the purpose"
 産む,うむ,GODAN,"to give birth, to bear (child), to lay (eggs); to produce, to yield, to give rise to, to deliver"
-ダンスする,だんすする,SURU,dance
+ダンスする,ダンスする,SURU,dance
 養う,やしなう,GODAN,"to support, to maintain, to provide for; to bring up, to raise, to rear, to feed; to adopt (a child); to cultivate (a habit, a quality, etc.), to develop, to build up, to foster; to recuperate (from injury, illness, etc.)"
 詰る,なじる,GODAN,"to rebuke, to scold, to tell off, to find fault, to harp on, to reprove; to question persistently (in order to criticize or find fault with someone)"
-サービスする,さあびすする,SURU,"service, help, assistance, care, concern; discount, discounted item; free service, freebie, gift; service, utility, amenity, resource; (after-sales) service, servicing, (product) maintenance; service (e.g. in tennis), serve"
+サービスする,サービスする,SURU,"service, help, assistance, care, concern; discount, discounted item; free service, freebie, gift; service, utility, amenity, resource; (after-sales) service, servicing, (product) maintenance; service (e.g. in tennis), serve"
 痛む,いたむ,GODAN,"to hurt, to ache, to feel a pain; to be injured, to be spoiled (e.g. food), to be damaged"
 名付ける,なづける,ICHIDAN,"to name, to call, to christen, to term"
-デートする,でえとする,SURU,"date (with someone), (social) outing (for two), date night; date (day)"
+デートする,デートする,SURU,"date (with someone), (social) outing (for two), date night; date (day)"
 引き起こす,ひきおこす,GODAN,"to cause, to induce, to bring about, to provoke; to pull upright, to help up (e.g. a fallen person)"
 値する,あたいする,SURU,"to be worth, to be worthy of, to deserve, to merit"
 謙る,へりくだる,GODAN,"to deprecate oneself and praise the listener, to abase oneself"
 済ます,すます,GODAN,"to finish, to get it over with, to conclude; to settle, to pay back; to get along (without something), to make do with (without)"
-スケートする,すけえとする,SURU,"skating (esp. ice), skate, skates"
-ノックする,のっくする,SURU,"knock, knocking; fungo hitting, hitting balls for fielding practice"
+スケートする,スケートする,SURU,"skating (esp. ice), skate, skates"
+ノックする,ノックする,SURU,"knock, knocking; fungo hitting, hitting balls for fielding practice"
 恥じる,はじる,ICHIDAN,to feel ashamed
 捧げる,ささげる,ICHIDAN,"to lift up, to hold up, to hold above eye level; to give, to offer, to consecrate; to devote, to sacrifice, to dedicate"
 見渡す,みわたす,GODAN,"to look out over, to survey (scene), to take an extensive view of"
-キャンプする,きゃんぷする,SURU,"camp, camping"
+キャンプする,キャンプする,SURU,"camp, camping"
 富む,とむ,GODAN,"to be rich in, to abound in, to be abundant in, to be full of; to be rich, to be wealthy"
 試みる,こころみる,ICHIDAN,"to try, to attempt, to have a go (at something)"
 受かる,うかる,GODAN,to pass (examination)
@@ -1691,7 +1691,7 @@
 待遇する,たいぐうする,SURU,"treatment, reception, service; working conditions, salary, pay, remuneration"
 残業する,ざんぎょうする,SURU,overtime (work)
 新築する,しんちくする,SURU,"new building, new construction"
-担任する,たっにんする,SURU,"being in charge of (esp. a class or subject), taking charge of; class teacher, homeroom teacher, form teacher"
+担任する,たんにんする,SURU,"being in charge of (esp. a class or subject), taking charge of; class teacher, homeroom teacher, form teacher"
 募金する,ぼきんする,SURU,"fund-raising, collection of funds"
 集計する,しゅうけいする,SURU,"totalization, totalisation, aggregation, tally (e.g. of votes), adding up, summing up"
 防御する,ぼうぎょする,SURU,"defense, defence, safeguard, protection"
@@ -1759,7 +1759,7 @@
 応ずる,おうずる,ICHIDAN,"to answer, to respond, to meet; to satisfy, to accept"
 代弁する,だいべんする,SURU,"speaking by proxy, speaking for (someone else), acting as spokesman (for), representing (the views, feelings, etc. of); payment by proxy, compensation by proxy, paying on behalf (of); acting for (someone else), carrying out (on someone's behalf)"
 射撃する,しゃげきする,SURU,"firing, shooting, fire, gunshot, marksmanship"
-縮める,ちdじめる,ICHIDAN,"to shorten, to reduce, to condense, to shrink; to crumple (fabric), to wrinkle; to make (one's body) smaller, to draw in (one's legs), to duck (one's head)"
+縮める,ちぢめる,ICHIDAN,"to shorten, to reduce, to condense, to shrink; to crumple (fabric), to wrinkle; to make (one's body) smaller, to draw in (one's legs), to duck (one's head)"
 論ずる,ろんずる,ICHIDAN,"to discuss, to talk about, to deal with (a topic); to argue, to dispute; to take into consideration, to make an issue of"
 張り切る,はりきる,GODAN,"to be in high spirits, to be full of vigor (vigour), to be enthusiastic, to be eager, to stretch to breaking point"
 手分けする,てわけする,SURU,"division of labour, division of labor, splitting into groups (e.g. to search)"
@@ -1788,27 +1788,27 @@
 報復する,ほうふくする,SURU,"retaliation, revenge, reprisal, retribution; retorsion, retortion"
 口述する,こうじゅつする,SURU,"dictation, verbal statement"
 転校する,てんこうする,SURU,changing schools
-コーチする,こおちする,SURU,coach
+コーチする,コーチする,SURU,coach
 取り組む,とりくむ,GODAN,"to grapple with, to wrestle with, to engage in a bout, to be matched against; to tackle (e.g. a problem), to come to grips with, to work hard on"
 目覚める,めざめる,ICHIDAN,"to wake up, to awake; to awaken to (instinct, ability, perception, etc.), to become aware of, to become conscious of, to realize; to come to one's senses"
 賭ける,かける,ICHIDAN,"to wager, to bet, to risk, to stake, to gamble"
 沿う,そう,GODAN,"to run along, to run beside, to stick to (a line); to follow (a policy, plan, etc.), to act in accordance with, to align with; to meet (wishes, expectations, etc.), to satisfy, to comply with, to live up to"
-プラスする,ぷらすする,SURU,"plus, addition; positive (number); plus sign, positive symbol; advantage, plus, asset, positive factor, positive effect; profit, gain; anode, plus terminal, positive pole; positive (test result)"
+プラスする,プラスする,SURU,"plus, addition; positive (number); plus sign, positive symbol; advantage, plus, asset, positive factor, positive effect; profit, gain; anode, plus terminal, positive pole; positive (test result)"
 尽きる,つきる,ICHIDAN,"to be used up, to be run out, to be exhausted, to be consumed, to come to an end"
 拒絶する,きょぜつする,SURU,"refusal, rejection"
-マスターする,ますたあする,SURU,"to master (a skill); proprietor, manager, owner, barkeeper; leader, chief, head; master (of arts, science, etc.); master (recording); master (device)"
-パスする,ぱすする,SURU,"passing (a test, examination, etc.); pass (for admission, transport, etc.), ticket; pass (of a ball); (giving something a) pass, skipping (one's turn); path (file, directory, graphics)"
+マスターする,マスターする,SURU,"to master (a skill); proprietor, manager, owner, barkeeper; leader, chief, head; master (of arts, science, etc.); master (recording); master (device)"
+パスする,パスする,SURU,"passing (a test, examination, etc.); pass (for admission, transport, etc.), ticket; pass (of a ball); (giving something a) pass, skipping (one's turn); path (file, directory, graphics)"
 欠く,かく,GODAN,"to chip, to nick, to break, to crack; to lack"
-ゴールする,ごおるする,SURU,"goal, basket (basketball), finishing line, winning post; Gaul"
+ゴールする,ゴールする,SURU,"goal, basket (basketball), finishing line, winning post; Gaul"
 封建する,ほうけんする,SURU,feudalistic
-セットする,せっとする,SURU,"set; set meal, combo-meal, combo, combination meal; hairdo"
+セットする,セットする,SURU,"set; set meal, combo-meal, combo, combination meal; hairdo"
 がる,がる,GODAN,"to show signs of being, to feel, to think; to behave as if one were, to pretend, to act as if"
 諮る,はかる,GODAN,"to consult with, to discuss, to confer, to deliberate"
-ファイルする,ふぁいるする,SURU,"file (for holding papers); file (collection of documents), filing, keeping on file; file (computing)"
+ファイルする,ファイルする,SURU,"file (for holding papers); file (collection of documents), filing, keeping on file; file (computing)"
 流行する,りゅうこうする,SURU,"fashion, trend, vogue, craze, fad, popularity; prevalence (of a disease), epidemic"
 悪口する,わるくちする,SURU,"slander, bad-mouthing, abuse, insult, speaking ill (of)"
-コントロールする,こんとろおるする,SURU,control
-カットする,かっとする,SURU,"cut, cutting; haircut; shuffle (cards), shuffling; scene, shot (in a movie)"
+コントロールする,コントロールする,SURU,control
+カットする,カットする,SURU,"cut, cutting; haircut; shuffle (cards), shuffling; scene, shot (in a movie)"
 預ける,あずける,ICHIDAN,"to leave (in someone's keeping), to put (in someone's care), to place (in someone's custody), to entrust (someone) with, to deposit; to put (someone) in charge of, to leave (a matter) in someone's hands, to let (someone) decide; to lean on, to put one's weight on"
 遂げる,とげる,ICHIDAN,"to accomplish, to achieve, to carry out; to arrive at (a certain outcome), to come to, to end with"
 添える,そえる,ICHIDAN,"to garnish, to accompany (as a card does a gift); to add to as support, to prop up; to accompany (as an aid, guide, translator, etc.); to mimic, to imitate; to draw something near to oneself, to approach nearby"
@@ -1943,7 +1943,7 @@
 沈める,しずめる,ICHIDAN,"to sink (e.g. a ship), to submerge; to lower (e.g. one's body into a chair); to floor (an opponent)"
 慕う,したう,GODAN,"to yearn for, to long for, to pine for, to miss, to love dearly, to adore; to follow (someone); to idolize (for virtue, learning, status, etc.)"
 普遍する,ふへんする,SURU,"universal, general, ubiquitous, omnipresent"
-信任する,しっにんする,SURU,"trust, confidence, credence"
+信任する,しんにんする,SURU,"trust, confidence, credence"
 増減する,ぞうげんする,SURU,"increase and decrease, fluctuation"
 添う,そう,GODAN,"to meet (wishes, expectations, etc.), to satisfy, to comply with, to live up to; to accompany, to go with, to stay by one's side; to associate with (someone), to mix with; to marry, to wed; to be added"
 連ねる,つらねる,ICHIDAN,"to line up, to put in a row; to add (to a group), to accept (as a member of an organization, etc.), to join (e.g. a list); to link, to put together, to string together (e.g. compliments), to enumerate; to take along with, to bring with"
@@ -1967,19 +1967,19 @@
 持続する,じぞくする,SURU,"continuation, persisting, lasting, sustaining, enduring"
 就寝する,しゅうしんする,SURU,"going to bed, retiring (for the night)"
 立法する,りっぽうする,SURU,"legislation, lawmaking"
-縮まる,ちdじまる,GODAN,"to shorten, to narrow, to close, to shrink"
+縮まる,ちぢまる,GODAN,"to shorten, to narrow, to close, to shrink"
 上映する,じょうえいする,SURU,"screening (a movie), showing"
 潤う,うるおう,GODAN,"to be moist, to be damp, to get wet, to be watered; to profit by, to receive benefits, to receive favors (favours); to become rich, to become at ease financially"
-サボる,さぼる,GODAN,"to be truant, to slack off, to play hooky, to skip school, to cut class, to skip out"
+サボる,サボる,GODAN,"to be truant, to slack off, to play hooky, to skip school, to cut class, to skip out"
 休学する,きゅうがくする,SURU,temporary absence from school
 焦る,あせる,GODAN,"to be in a hurry, to be impatient, to be anxious (to do), to fret; to get a fright, to panic, to get flustered, to be startled"
-セックスする,せっくすする,SURU,"sex, sexual intercourse; (one's) sex, gender"
+セックスする,セックスする,SURU,"sex, sexual intercourse; (one's) sex, gender"
 待たせる,またせる,ICHIDAN,to keep (a person) waiting
 恥じらう,はじらう,GODAN,"to feel shy, to be bashful, to blush"
 果てる,はてる,ICHIDAN,"to end, to be finished, to be exhausted; to die, to perish; to do utterly, to do completely"
 連れる,つれる,ICHIDAN,"to take (someone) with one, to bring along, to go with, to be accompanied by"
 知り合う,しりあう,GODAN,"to get to know each other, to make acquaintance"
-アップする,あっぷする,SURU,"increasing; uploading, posting (e.g. content), putting online; close-up; finishing shooting (of a film, etc.); upswept hairstyle; being up (i.e. leading in sports); warming up; being over, being finished"
+アップする,アップする,SURU,"increasing; uploading, posting (e.g. content), putting online; close-up; finishing shooting (of a film, etc.); upswept hairstyle; being up (i.e. leading in sports); warming up; being over, being finished"
 隠居する,いんきょする,SURU,"retirement (from work), leading a quiet life (after retirement); retired person, retiree; surrendering headship of the family (pre-WWII)"
 応える,こたえる,ICHIDAN,"to respond, to answer, to meet (e.g. demands, expectations); to affect, to take a toll, to strike home, to have an effect on, to be hard on someone (e.g. heat, cold, work, illness, etc.), to be a strain"
 観覧する,かんらんする,SURU,viewing
@@ -1994,13 +1994,13 @@
 面接する,めんせつする,SURU,interview (e.g. for a job)
 乾燥する,かんそうする,SURU,"dryness, aridity, drying (e.g. clothes), dehydration, desiccation; insipidity"
 反省する,はんせいする,SURU,"reflection, reconsideration, introspection, meditation, contemplation; regret, repentance, remorse, being sorry"
-チェンジする,ちぇんじする,SURU,"change, changing; exchange (e.g. of goods)"
+チェンジする,チェンジする,SURU,"change, changing; exchange (e.g. of goods)"
 測量する,そくりょうする,SURU,"measurement, surveying"
 蒸発する,じょうはつする,SURU,"evaporation; disappearance (of a person), vanishing without a trace"
 迫る,せまる,GODAN,"to approach, to draw near, to be imminent; to press (someone for something), to urge, to compel"
 低下する,ていかする,SURU,"fall, decline, lowering, deterioration, degradation"
 冷やす,ひやす,GODAN,"to cool (from room temperature), to chill, to refrigerate; to calm down, to cool off, to regain one's composure, to relax; to be frightened (at), to be scared (of)"
-マッサージする,まっさあじする,SURU,massage
+マッサージする,マッサージする,SURU,massage
 活躍する,かつやくする,SURU,"activity (esp. energetic or successful), great efforts, active participation; walking about with great vigor"
 凝る,こる,GODAN,"to congeal, to freeze"
 降伏する,こうふくする,SURU,"capitulation, surrender, submission; yield"
@@ -2008,20 +2008,20 @@
 一敗する,いっぱいする,SURU,one defeat
 吸い込む,すいこむ,GODAN,"to inhale, to breathe in, to suck up, to imbibe; to absorb, to soak up"
 救出する,きゅうしゅつする,SURU,"rescue, extricate, reclaim, deliverance"
-デザインする,でざいんする,SURU,design
+デザインする,デザインする,SURU,design
 懸念する,けねんする,SURU,"worry, fear, anxiety, concern"
 生み出す,うみだす,GODAN,"to create, to bring forth, to produce; to invent, to think up and bring into being; to give birth to, to bear"
 辞任する,じにんする,SURU,resignation (from a position)
-ジャンプする,じゃんぷする,SURU,"jump; jumping event (skiing, track and field); jumping (to another page after clicking a hyperlink); jump (in price), sudden rise"
+ジャンプする,ジャンプする,SURU,"jump; jumping event (skiing, track and field); jumping (to another page after clicking a hyperlink); jump (in price), sudden rise"
 餓死する,がしする,SURU,"(death from) starvation, starving to death"
 立候補する,りっこうほする,SURU,"candidacy, standing as a candidate, bidding (to host an event, e.g. the Olympics)"
 選出する,せんしゅつする,SURU,"election, selection, choice"
-ブームする,ぶうむする,SURU,"boom, rage, fad; boom, cross-arm"
+ブームする,ブームする,SURU,"boom, rage, fad; boom, cross-arm"
 支援する,しえんする,SURU,"support, backing, aid, assistance"
-パチンコする,ぱちんこする,SURU,"pachinko, mechanical gambling game superficially resembling pinball; slingshot, catapult; pistol"
-ダウンする,だうんする,SURU,"going down, fall, decrease, drop; knocking down (in boxing), flooring, being knocked down, being floored; being out of action (due to illness, exhaustion, etc.), being down (e.g. with a cold), being knocked out (from alcohol), being out of it, collapsing; going down (of a computer system, server, etc.), crashing; (number of) outs; being down (in points, games, etc.), behind behind, trailing; down (American football); down (feathers)"
-オープンする,おおぷんする,SURU,"opening (a new store, golf course, runway, etc.); open, frank, approachable, open-hearted; open (car, collar, tournament, etc.)"
-断念する,だっねんする,SURU,"abandoning (hope, plans), giving up"
+パチンコする,パチンコする,SURU,"pachinko, mechanical gambling game superficially resembling pinball; slingshot, catapult; pistol"
+ダウンする,ダウンする,SURU,"going down, fall, decrease, drop; knocking down (in boxing), flooring, being knocked down, being floored; being out of action (due to illness, exhaustion, etc.), being down (e.g. with a cold), being knocked out (from alcohol), being out of it, collapsing; going down (of a computer system, server, etc.), crashing; (number of) outs; being down (in points, games, etc.), behind behind, trailing; down (American football); down (feathers)"
+オープンする,オープンする,SURU,"opening (a new store, golf course, runway, etc.); open, frank, approachable, open-hearted; open (car, collar, tournament, etc.)"
+断念する,だんねんする,SURU,"abandoning (hope, plans), giving up"
 仰ぐ,あおぐ,GODAN,"to look up (at); to look up to, to respect, to revere; to ask for (e.g. guidance), to seek, to turn to (someone) for; to depend on, to rely on; to gulp down, to quaff, to drink"
 判明する,はんめいする,SURU,"establishing, proving, ascertaining, identifying, confirming"
 発する,はっする,SURU,"to let out, to utter, to produce, to emit, to give forth, to discharge; to issue, to send, to give; to leave, to depart; to occur, to appear; to shoot (an arrow or bullet), to fire"
@@ -2181,10 +2181,10 @@
 消滅する,しょうめつする,SURU,"extinction, extinguishment, disappearance, vanishing, termination, lapse; annihilation"
 入国する,にゅうこくする,SURU,entry into a country
 運行する,うんこうする,SURU,"service (bus, train), operation; motion, revolution, movement"
-コメントする,こめんとする,SURU,comment
-コンタクトする,こんたくとする,SURU,contact; contact lens
+コメントする,コメントする,SURU,comment
+コンタクトする,コンタクトする,SURU,contact; contact lens
 転送する,てんそうする,SURU,"transfer, redirection, transmission, forwarding (telephone call, e-mail, etc.)"
-キャッチする,きゃっちする,SURU,"catch, catching, obtaining (e.g. information), receiving (e.g. radio transmission or phone call); catch; shop tout, puller-in; catching (in swimming and boating), catching the water; catcher; call waiting"
+キャッチする,キャッチする,SURU,"catch, catching, obtaining (e.g. information), receiving (e.g. radio transmission or phone call); catch; shop tout, puller-in; catching (in swimming and boating), catching the water; catcher; call waiting"
 点滴する,てんてきする,SURU,"raindrops, falling drop of water; intravenous drip, IV, drip-feed"
 押収する,おうしゅうする,SURU,"seizure, confiscation"
 登記する,とうきする,SURU,"registry, registration"
@@ -2422,7 +2422,7 @@
 分別する,ぶんべつする,SURU,"discretion, prudence, good sense, judgement, judgment, wisdom, discernment"
 くつろぐ,くつろぐ,GODAN,"to relax, to feel at home"
 下す,くだす,GODAN,"to make a decision, to draw a conclusion; to give a judgement, to hand down a verdict, to pass a sentence, to give an order; to let go down, to lower; to do oneself, to do by oneself; to beat, to defeat; to have loose bowels, to have diarrhea; to pass (in stool), to discharge from the body; to do in one go, to do to the end without stopping"
-参入する,さっにゅうする,SURU,"entering (the marketplace), introducing (something) to the market, access; visiting a high-class or noble individual"
+参入する,さんにゅうする,SURU,"entering (the marketplace), introducing (something) to the market, access; visiting a high-class or noble individual"
 大別する,たいべつする,SURU,"general classification, broad categorization"
 修業する,しゅぎょうする,SURU,"pursuit of knowledge, studying, learning, training, completing a course"
 併用する,へいようする,SURU,"using together (jointly), used at the same time"
@@ -2434,11 +2434,11 @@
 先見する,せんけんする,SURU,"foresight, anticipation"
 占拠する,せんきょする,SURU,"occupation (e.g. of territory), exclusive possession"
 専属する,せんぞくする,SURU,"exclusive, attached to, specialist"
-キスする,きすする,SURU,kiss
+キスする,キスする,SURU,kiss
 主宰する,しゅさいする,SURU,"supervision, superintendence, chairmanship, chairman"
 送付する,そうふする,SURU,"sending (esp. email attachments), forwarding, remitting"
 定着する,ていちゃくする,SURU,"sticking (in one place, position, etc.), settling, fixing, adherence; becoming established (of a custom, system, etc.), taking hold, taking root; fixation (photography), fixing"
-リクエストする,りくえすとする,SURU,request
+リクエストする,リクエストする,SURU,request
 交戦する,こうせんする,SURU,"war, battle, hostilities"
 やって来る,やってくる,KURU,"to come along, to come around, to turn up; to arrive at the present, to get where one is, to have been doing something (for a period of time)"
 乗り遅れる,のりおくれる,ICHIDAN,"to miss (a train, bus, etc.); to fail to keep up with (e.g. the times), to be left behind by"
@@ -2449,9 +2449,9 @@
 陥る,おちいる,GODAN,"to fall into (e.g. a hole); to fall into (chaos, depression, dilemma, illness, etc.); to fall into (a trap, etc.); to fall, to surrender, to capitulate"
 見守る,みまもる,GODAN,"to watch over, to watch attentively"
 見出す,みだす,GODAN,"to find out, to discover, to notice, to detect; to select, to pick out; to look out (from the inside); to be wide-eyed (in surprise, anger, etc.)"
-ボランティアする,ぼらんてぃあする,SURU,volunteer
-シャンプーする,しゃんぷうする,SURU,shampoo
-チャレンジする,ちゃれんじする,SURU,"taking on (a challenge), attempt, try, tackling, challenging (someone to a contest)"
+ボランティアする,ボランティアする,SURU,volunteer
+シャンプーする,シャンプーする,SURU,shampoo
+チャレンジする,チャレンジする,SURU,"taking on (a challenge), attempt, try, tackling, challenging (someone to a contest)"
 仮想する,かそうする,SURU,"imagination, supposition, virtual, potential (enemy)"
 所管する,しょかんする,SURU,jurisdiction
 競り合う,せりあう,GODAN,"to struggle for, to compete with, to vie with"
@@ -2459,7 +2459,7 @@
 付与する,ふよする,SURU,"grant, allowance, endowment, bestowal, assignment, conferment"
 抑える,おさえる,ICHIDAN,"to keep within limits (e.g. spending), to restrain (e.g. emotions), to control, to curb, to hold in check; to hold back (e.g. an enemy), to check, to curb, to contain, to quell, to subdue, to suppress, to repress"
 名乗りする,なのりする,SURU,"giving one's name (or rank, etc.), self-introduction; name readings of kanji"
-タッチする,たっちする,SURU,touch; being involved in
+タッチする,タッチする,SURU,touch; being involved in
 二分する,にぶんする,SURU,"halving, dividing (into two parts), bisection; the two equinoxes (vernal and autumnal)"
 監査する,かんさする,SURU,"inspection, audit, judgement, judgment"
 出入する,しゅつにゅうする,SURU,"in and out, income and expenses, free associations, run of the house"
@@ -2480,20 +2480,20 @@
 凝固する,ぎょうこする,SURU,"coagulation, freezing, solidification"
 生殖する,せいしょくする,SURU,reproduction
 こなす,こなす,GODAN,"to digest; to break down, to break to pieces, to crush; to be able to use, to be good at, to have a good command of; to finish, to complete, to manage, to perform; to sell; to do ... well, to do ... completely"
-キャンセルする,きゃんせるする,SURU,cancellation
-カタログする,かたろぐする,SURU,"catalog, catalogue"
-イメージする,いめえじする,SURU,"image (in one's mind), impression, mental image, (mental) picture; (computer) image; depiction (e.g. of a product), rendition, impression"
-ヒットする,ひっとする,SURU,"hit, base hit, safe hit, single; hit, success; hit (e.g. boxing, hockey), blow; hit (i.e. as a search result)"
+キャンセルする,キャンセルする,SURU,cancellation
+カタログする,カタログする,SURU,"catalog, catalogue"
+イメージする,イメージする,SURU,"image (in one's mind), impression, mental image, (mental) picture; (computer) image; depiction (e.g. of a product), rendition, impression"
+ヒットする,ヒットする,SURU,"hit, base hit, safe hit, single; hit, success; hit (e.g. boxing, hockey), blow; hit (i.e. as a search result)"
 瞬く,またたく,GODAN,"to twinkle (e.g. stars), to flicker, to waver; to blink (one's eyes), to wink, to bat"
-ショッピングする,しょっぴんぐする,SURU,shopping
-アピールする,あぴいるする,SURU,"appeal (e.g. for peace), plea, request; appeal (of something), attractiveness, allure; appeal (to the referee); emphasizing, calling attention to, making a display of, showing off, playing up, touting, using as a selling point, pitch"
-レンタルする,れんたるする,SURU,rental
+ショッピングする,ショッピングする,SURU,shopping
+アピールする,アピールする,SURU,"appeal (e.g. for peace), plea, request; appeal (of something), attractiveness, allure; appeal (to the referee); emphasizing, calling attention to, making a display of, showing off, playing up, touting, using as a selling point, pitch"
+レンタルする,レンタルする,SURU,rental
 忘却する,ぼうきゃくする,SURU,"lapse of memory, forgetting completely, (consigning to) oblivion"
 架橋する,かきょうする,SURU,"bridge-building, bridge construction; bridge; bridging (e.g. the gap between theory and practice); cross-linking"
 拾得する,しゅうとくする,SURU,"finding (lost property), picking up"
 寄生する,きせいする,SURU,parasitism
-メールする,めえるする,SURU,"email; mail (usu. in compound words), post; message (sent over a chat application), instant message, IM, (SMS) text; male"
-アレンジする,あれんじする,SURU,"arrangement (of music), adaptation (of a story, recipe, etc.), interpretation, take; arranging (objects, a meeting, etc.), organization"
+メールする,メールする,SURU,"email; mail (usu. in compound words), post; message (sent over a chat application), instant message, IM, (SMS) text; male"
+アレンジする,アレンジする,SURU,"arrangement (of music), adaptation (of a story, recipe, etc.), interpretation, take; arranging (objects, a meeting, etc.), organization"
 会心する,かいしんする,SURU,"congeniality, satisfaction, gratification"
 流動する,りゅうどうする,SURU,flow
 苦戦する,くせんする,SURU,"hard fight, close game, struggle, tight contest"
@@ -2544,7 +2544,7 @@
 反逆する,はんぎゃくする,SURU,"treason, treachery, mutiny, rebellion, insurrection"
 婚姻する,こんいんする,SURU,"marriage, matrimony"
 転身する,てんしんする,SURU,"changing (job, career, lifestyle, social position, beliefs, etc.)"
-編入する,へっにゅうする,SURU,"admission, incorporation, enlistment, enrollment"
+編入する,へんにゅうする,SURU,"admission, incorporation, enlistment, enrollment"
 策定する,さくていする,SURU,"formulation (of a plan, policy, etc.), decision, settling on"
 刷新する,さっしんする,SURU,"reform, renovation"
 退場する,たいじょうする,SURU,"exit (from a stage), exeunt; leaving, exit"
@@ -2608,11 +2608,11 @@
 安住する,あんじゅうする,SURU,"living in peace, living a quiet life; being content with one's present position, being satisfied with one's lot"
 閉塞する,へいそくする,SURU,"blockage, blockade, blocking up, stoppage, obstruction, occlusion"
 毀損する,きそんする,SURU,"damage, injury, defamation, harm"
-ロックする,ろっくする,SURU,lock
-ミックスする,みっくすする,SURU,"mix; mixed-race person, multiracial person"
+ロックする,ロックする,SURU,lock
+ミックスする,ミックスする,SURU,"mix; mixed-race person, multiracial person"
 雨が降る,あめがふる,GODAN,to rain
 施工する,しこうする,SURU,"construction, constructing, carrying out, work, formation, workmanship, execution"
-バイトする,ばいとする,SURU,"part-time job, side job (abbreviation)"
+バイトする,バイトする,SURU,"part-time job, side job (abbreviation)"
 直す,なおす,GODAN,"to repair, to mend, to fix, to correct (a mistake, bad habit, etc.), to put right, to restore, to straighten (e.g. a tie), to tidy up (one's hair, make-up, etc.), to revive (one's spirits); to change, to alter, to convert, to translate; to put back, to put away; to cure, to heal; to move up, to promote; to do over again, to redo"
 おる,おる,ICHIDAN,"to be (animate), to be, to exist; to stay; to be ...-ing; to (have the audacity) to do [Humble (kenjougo) language]"
 開く,ひらく,GODAN,"to open, to undo, to unseal, to unpack; to bloom, to unfold, to spread out; to open (for business, e.g. in the morning); to be wide (gap, etc.), to widen; to hold (meeting, party, etc.), to give, to open; to found (nation, dynasty, sect, etc.), to open (a new business), to set up, to establish, to start; to open (ports, borders, etc.); to open (an account); to open up (new land, path, etc.), to clear, to develop; to open (a file, etc.); to extract (root), to reduce (equation); to cut open (fish); to change (kanji into hiragana); to flare (e.g. skirt); to slacken (into a poor posture)"

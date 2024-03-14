@@ -90,11 +90,11 @@ public class Scheduler {
 			verbListFile.readLine();
 			while ((line = verbListFile.readLine()) != null) {
 				
-				String[] tokens = line.split(",");
+				String[] tokens = line.split(",", 4);
 				String dictionaryForm = tokens[0];
 				String reading = tokens[1];
 				VerbGroup verbGroup = VerbGroup.valueOf(tokens[2]);
-				String meaning = tokens[3];
+				String meaning = tokens[3].replaceAll("\"", "");
 				Verb verb = new Verb(dictionaryForm, reading, verbGroup, meaning);
 				
 				// Add verb to list

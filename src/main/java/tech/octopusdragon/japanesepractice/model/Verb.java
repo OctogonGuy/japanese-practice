@@ -100,13 +100,17 @@ public class Verb {
 	 */
 	public String conjugate(Conjugation conjugation) {
 		String stem = reading.substring(0, reading.length() - 1);
+		String root = reading.substring(0, reading.length() - 2);
 		char lastKana = reading.charAt(reading.length() - 1);
 		String suffix = conjugationMap.get(verbGroup).get(lastKana).get(conjugation);
-		if (suffix.contains("*")) {
+		if (suffix.contains("**")) {
+			suffix = suffix.replace("**", root);
+		}
+		else if (suffix.contains("*")) {
 			suffix = suffix.replace("*", stem);
 		}
 		else if (suffix.equals("")) {
-			suffix = dictionaryForm;
+			suffix = reading;
 		}
 		return suffix;
 	}
