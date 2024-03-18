@@ -97,8 +97,10 @@ public class Verb {
 	 * Returns the verb conjugated to the given form
 	 * @param conjugation The conjugation
 	 * @return The conjugated form
+	 * @exception InvalidConjugationException When the given conjugation does
+	 * not exist for this verb.
 	 */
-	public String conjugate(Conjugation conjugation) {
+	public String conjugate(Conjugation conjugation) throws InvalidConjugationException {
 		String stem = reading.substring(0, reading.length() - 1);
 		String root = reading.substring(0, reading.length() - 2);
 		char lastKana = reading.charAt(reading.length() - 1);
@@ -110,7 +112,7 @@ public class Verb {
 			suffix = suffix.replace("*", stem);
 		}
 		else if (suffix.equals("")) {
-			suffix = reading;
+			throw new InvalidConjugationException();
 		}
 		return suffix;
 	}

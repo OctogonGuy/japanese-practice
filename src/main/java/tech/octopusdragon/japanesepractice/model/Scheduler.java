@@ -335,11 +335,22 @@ public class Scheduler {
 	
 	/**
 	 * Generates a random conjugation
+	 * @param The verb to conjugate
 	 * @return Conjugation
 	 */
-	public static Conjugation nextConjugation() {
+	public static Conjugation nextConjugation(Verb verb) {
 		Random rand = new Random();
-		Conjugation conjugation = Conjugation.values()[rand.nextInt(Conjugation.values().length)];
+		List<Conjugation> conjugations = Arrays.asList(Conjugation.values());
+		// Remove conjugations that do not exist for the given verb
+		for (Conjugation conjugation : Conjugation.values()) {
+			try {
+				verb.conjugate(conjugation);
+			}
+			catch (InvalidConjugationException e) {
+				conjugations.remove(conjugation);
+			}
+		}
+		Conjugation conjugation = conjugations.get(rand.nextInt(conjugations.size()));
 		return conjugation;
 	}
 	

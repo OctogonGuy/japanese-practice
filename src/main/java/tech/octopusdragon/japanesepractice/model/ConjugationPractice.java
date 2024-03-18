@@ -38,7 +38,7 @@ public class ConjugationPractice {
 	 */
 	public void next() {
 		curVerb = Scheduler.nextVerb();
-		curConjugation = Scheduler.nextConjugation();
+		curConjugation = Scheduler.nextConjugation(curVerb);
 	}
 	
 	/**

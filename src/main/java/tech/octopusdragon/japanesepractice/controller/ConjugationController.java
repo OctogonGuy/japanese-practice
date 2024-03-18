@@ -137,6 +137,8 @@ public class ConjugationController {
 			if (hiraganaDiff.startsWith("っ") && new MojiDetector().hasRomaji(hiraganaDiff)) return;
 			// Do nothing if ん without double n
 			if (hiraganaDiff.startsWith("ん") && (romajiDiff.equals("n") || romajiDiff.equals("m") || romajiDiff.equals("nm"))) return;
+			// Do nothing if ん with ny
+			if (hiraganaDiff.startsWith("ん") && (romajiDiff.equals("ny"))) return;
 			// Replace double n with ん
 			hiraganaDiff = hiraganaDiff.replace("っん", "ん");
 			int caretDistanceFromEnd = answerTextField.getText().length() - answerTextField.getCaretPosition();
