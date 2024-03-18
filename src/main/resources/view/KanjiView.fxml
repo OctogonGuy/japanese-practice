@@ -2,6 +2,7 @@
 
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -36,8 +37,9 @@
          <children>
             <GridPane fx:id="infoPane">
                <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" />
                </columnConstraints>
                <rowConstraints>
                   <RowConstraints minHeight="10.0" percentHeight="80.0" vgrow="SOMETIMES" />
@@ -127,6 +129,13 @@
                      <children>
                         <Label text="音訓：" />
                         <Label fx:id="readingLabel" text="オン、くん" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_RIGHT" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <children>
+                        <Hyperlink fx:id="wanikaniLink" text="Wanikani" />
+                        <Hyperlink fx:id="jishoLink" text="Jisho" />
+                        <Hyperlink fx:id="kanjipediaLink" text="Kanjipedia" />
                      </children>
                   </VBox>
                </children>

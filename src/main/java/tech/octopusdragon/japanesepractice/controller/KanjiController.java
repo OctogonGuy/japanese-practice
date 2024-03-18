@@ -1,7 +1,13 @@
 package tech.octopusdragon.japanesepractice.controller;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import tech.octopusdragon.japanesepractice.model.Kanji;
 import tech.octopusdragon.japanesepractice.model.KanjiPractice;
@@ -15,6 +21,7 @@ import javafx.scene.Parent;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TouchEvent;
@@ -39,6 +46,9 @@ public abstract class KanjiController {
 	@FXML private Button correctButton;
 	@FXML private Button incorrectButton;
 	@FXML private Button showButton;
+	@FXML private Hyperlink wanikaniLink;
+	@FXML private Hyperlink jishoLink;
+	@FXML private Hyperlink kanjipediaLink;
 	
 	private Font defaultKanjiFont;
 	private double lastX, lastY;
@@ -66,6 +76,20 @@ public abstract class KanjiController {
 				else {
 					square.getParent().getStyleClass().add("enabled-square");
 					square.getParent().getStyleClass().remove("disabled-square");
+				}
+			});
+		}
+		
+		Map<Hyperlink, String> linkMap = new HashMap<>();
+		linkMap.put(wanikaniLink, "https://wanikani.com/kanji/%s");
+		linkMap.put(jishoLink, "https://jisho.org/search/%s%%23kanji");
+		linkMap.put(kanjipediaLink, "https://dictionary.goo.ne.jp/word/kanji/%s/");
+		for (Hyperlink hyperlink : new Hyperlink[] {wanikaniLink, jishoLink, kanjipediaLink}) {
+			hyperlink.setOnAction(event -> {
+				try {
+					Desktop.getDesktop().browse(new URL(String.format(linkMap.get(hyperlink), session.getCurKanji())).toURI());
+				} catch (IOException | URISyntaxException e) {
+					e.printStackTrace();
 				}
 			});
 		}
@@ -99,6 +123,9 @@ public abstract class KanjiController {
 		joyoGradeLabel.setText(session.getCurKanji().getJoyoGrade());
 		meaningLabel.setText(session.getCurKanji().getMeaning());
 		readingLabel.setText(session.getCurKanji().getReading());
+		wanikaniLink.setVisible(false);
+		jishoLink.setVisible(false);
+		kanjipediaLink.setVisible(false);
 		correctButton.setVisible(false);
 		correctButton.setManaged(false);
 		incorrectButton.setVisible(false);
@@ -123,6 +150,9 @@ public abstract class KanjiController {
 	@FXML
 	private void show(ActionEvent event) {
 		characterText.setVisible(true);
+		wanikaniLink.setVisible(true);
+		jishoLink.setVisible(true);
+		kanjipediaLink.setVisible(true);
 		correctButton.setVisible(true);
 		correctButton.setManaged(true);
 		incorrectButton.setVisible(true);
