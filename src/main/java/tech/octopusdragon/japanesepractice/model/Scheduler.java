@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 /**
  * The Scheduler class reads data files and shows materials based on its
@@ -26,8 +27,8 @@ public class Scheduler {
 	private static final String COUNTER_RULES_FILENAME = "counter_rules.csv";
 	
 	private static List<Kanji> kanjiList;
-	private static Map<String, Verb> verbList;
-	private static Map<String, Counter> counterList;
+	private static List<Verb> verbList;
+	private static List<Counter> counterList;
 	
 	
 	static {
@@ -77,8 +78,8 @@ public class Scheduler {
 	 * Reads verb list file
 	 * @return Verb list
 	 */
-	private static Map<String, Verb> readVerbs() {
-		verbList = new HashMap<String, Verb>();
+	private static List<Verb> readVerbs() {
+		verbList = new ArrayList<Verb>();
 		// Read verb list file
 		try {
 			InputStream verbListInputStream =
@@ -98,7 +99,7 @@ public class Scheduler {
 				Verb verb = new Verb(dictionaryForm, reading, verbGroup, meaning);
 				
 				// Add verb to list
-				verbList.put(dictionaryForm, verb);
+				verbList.add(verb);
 			}
 			verbListInputStream.close();
 		} catch (IOException e) {
@@ -112,7 +113,7 @@ public class Scheduler {
 	 * Reads counter list file
 	 * @return Counter list
 	 */
-	private static Map<String, Counter> readCounters() {
+	private static List<Counter> readCounters() {
 		
 		// Read number list file
 		Map<Integer, Number> numberList = new HashMap<Integer, Number>();
@@ -173,7 +174,7 @@ public class Scheduler {
 		}
 		
 		// Read counter list file
-		counterList = new HashMap<String, Counter>();
+		counterList = new ArrayList<Counter>();
 		try {
 			InputStream counterListInputStream =
 					Scheduler.class.getResourceAsStream(LIST_DIRECTORY + COUNTER_LIST_FILENAME);
@@ -228,7 +229,7 @@ public class Scheduler {
 				}
 				
 				// Add counter to list
-				counterList.put(suffix, counter);
+				counterList.add(counter);
 			}
 			counterListInputStream.close();
 		} catch (IOException e) {
@@ -328,7 +329,12 @@ public class Scheduler {
 	 */
 	public static Verb nextVerb() {
 		Random rand = new Random();
-		Verb verb = verbList.values().toArray(new Verb[0])[rand.nextInt(verbList.size())];
+		// Incorporate verb group weighted chances
+		VerbGroup verbGroup = VerbGroup.weightedSelection(rand.nextDouble());
+		List<Verb> filteredVerbList = verbList.stream()
+				.filter(verb -> verb.getVerbGroup() == verbGroup)
+				.collect(Collectors.toList());
+		Verb verb = filteredVerbList.get(rand.nextInt(filteredVerbList.size()));
 		return verb;
 	}
 	
@@ -340,8 +346,8 @@ public class Scheduler {
 	 */
 	public static Conjugation nextConjugation(Verb verb) {
 		Random rand = new Random();
-		List<Conjugation> conjugations = Arrays.asList(Conjugation.values());
 		// Remove conjugations that do not exist for the given verb
+		List<Conjugation> conjugations = new ArrayList<>(Arrays.asList(Conjugation.values()));
 		for (Conjugation conjugation : Conjugation.values()) {
 			try {
 				verb.conjugate(conjugation);
@@ -361,7 +367,7 @@ public class Scheduler {
 	 */
 	public static Counter nextCounter() {
 		Random rand = new Random();
-		Counter counter = counterList.values().toArray(new Counter[0])[rand.nextInt(counterList.size())];
+		Counter counter = counterList.get(rand.nextInt(counterList.size()));
 		return counter;
 	}
 	
