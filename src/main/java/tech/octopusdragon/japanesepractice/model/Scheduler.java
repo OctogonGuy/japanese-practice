@@ -230,69 +230,48 @@ public class Scheduler {
 					if (maxNum != -1 && number.getNumber() > maxNum) break;
 					
 					String kanjiCompound = number.getKanjiNumeral() + suffix;
-					
-					// TODO - redo this
 					List<String> kanaCompounds = new ArrayList<String>();
-					// If there is no specified beginning kana for this counter rule
-					if (counterRuleMap.get(type).containsKey("") && counterRuleMap.get(type).get("").containsKey(number.getNumber())) {
-						String[] numberReadings = counterRuleMap.get(type).get("").get(number.getNumber()).split(";");
-						for (int i = 0; i < numberReadings.length; i++) {
-							if (!irregularReadings[number.getNumber() - 1][0].equals("")) {
-								for (int j = 0; j < irregularReadings[i].length; j++) {
-									kanaCompounds.add(numberReadings[i] + irregularReadings[i][j]);
-								}
-							}
-							else {
-								for (int j = 0; j < readings.length; j++) {
-									kanaCompounds.add(numberReadings[i] + readings[j]);
-								}
-							}
-						}
+					int numberIndex = number.getNumber() - 1;
+					String[] numberReadings = null;
+					String[] prefixReadings = null;
+					
+					// If there are special numeral reading(s), use that as the number reading(s)
+					if (counterRuleMap.get(type).containsKey("") &&
+							counterRuleMap.get(type).get("").containsKey(number.getNumber())) {
+						numberReadings = counterRuleMap.get(type).get("").get(number.getNumber()).split(";");
 					}
-					// If there is a specified special prefix for the beginning kana
-					else if (!counterRuleMap.get(type).containsKey("") && counterRuleMap.get(type).get(readings[0].substring(0, 1)).containsKey(number.getNumber())) {
-						String[] prefixReadings = counterRuleMap.get(type).get(readings[0].substring(0, 1)).get(number.getNumber()).split(";");
-						for (int i = 0; i < prefixReadings.length; i++) {
-							if (!irregularReadings[number.getNumber() - 1][0].equals("") && irregularReadings[number.getNumber() - 1][0].length() > 1) {
-								for (int j = 0; j < irregularReadings[number.getNumber() - 1].length; j++) {
-									kanaCompounds.add(irregularReadings[number.getNumber() - 1][j]);
-								}
-							}
-							else if (readings[0].length() > 1) {
-								for (int j = 0; j < readings.length; j++) {
-									kanaCompounds.add(prefixReadings[i] + readings[j].substring(1));
-								}
-							}
-							else {
-								kanaCompounds.add(prefixReadings[i]);
-							}
-						}
+					// If there are special prefix reading(s) (number + beginning of counter), use those
+					else if (!counterRuleMap.get(type).containsKey("") &&
+							counterRuleMap.get(type).get(readings[0].substring(0, 1)).containsKey(number.getNumber())) {
+						prefixReadings = counterRuleMap.get(type).get(readings[0].substring(0, 1)).get(number.getNumber()).split(";");
 					}
-					// If there is not a specified special prefix for the beginning kana
-					else if (type != CounterType.IRREGULAR) {
-						for (int i = 0; i < number.getReadings().size(); i++) {
-							if (!irregularReadings[number.getNumber() - 1][0].equals("")) {
-								for (int j = 0; j < irregularReadings[number.getNumber() - 1].length; j++) {
-									kanaCompounds.add(irregularReadings[number.getNumber() - 1][j]);
-								}
-							}
-							else {
-								for (int j = 0; j < readings.length; j++) {
-									kanaCompounds.add(number.getReadings().get(i) + readings[j]);
-								}
-							}
-						}
-					}
-					// If there is no counter rule (irregular counter)
+					// Otherwise, use normal number reading(s)
 					else {
-						for (int j = 0; j < irregularReadings[number.getNumber() - 1].length; j++) {
-							kanaCompounds.add(irregularReadings[number.getNumber() - 1][j]);
-						}
+						numberReadings = number.getReadings().toArray(new String[0]);
 					}
 					
+					// If irregular reading, use that
+					if (!irregularReadings[numberIndex][0].isEmpty()) {
+						for (String reading : irregularReadings[numberIndex])
+							kanaCompounds.add(reading);
+					}
+					// If beginning kana and special prefix, prefix + counter
+					else if (prefixReadings != null) {
+						for (int i = 0; i < prefixReadings.length; i++)
+							for (int j = 0; j < readings.length; j++)
+								kanaCompounds.add(prefixReadings[i] + readings[j].substring(1));
+					}
+					// Otherwise, number + counter
+					else {
+						for (int i = 0; i < numberReadings.length; i++)
+							for (int j = 0; j < readings.length; j++)
+								kanaCompounds.add(numberReadings[i] + readings[j]);
+					}
+					
+					// Construct English translation
 					String meaningCompound;
-					if (!irregularMeanings[number.getNumber() - 1].equals("")) {
-						meaningCompound = irregularMeanings[number.getNumber() - 1];
+					if (!irregularMeanings[numberIndex].equals("")) {
+						meaningCompound = irregularMeanings[numberIndex];
 					}
 					else if (number.getNumber() == 1) {
 						meaningCompound = number.getMeaning() + " " + meaningSingular;
