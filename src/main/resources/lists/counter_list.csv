@@ -1,30 +1,115 @@
-﻿Counter,Reading,Type,Meaning (Singular),Meaning (Plural)
-枚,まい,A1,thin object,thin objects
-本,ほん,B1,long object,long objects
-課,か,C1,lesson,lessons
-冊,さつ,D1,volume,volumes
-頁,ぺーじ,E,page,pages
-頭,とう,F,head of cattle,heads of cattle
-倍,ばい,A1,time (as much),times (as much)
-度,ど,A1,time (small numbers),time (small numbers)
-畳,じょう,A1,tatami mat,tatami mats
-部,ぶ,A1,part,parts
-面,めん,A1,newspaper page,newspaper pages
-時間,じかん,A2,hour,hours
-年間,ねんかん,A2,year,years
-羽,わ,A4,bird,birds
-杯,はい,B1,cup,cups
-匹,ひき,B1,small animal,small animals
-泊,はく,B2,night's stay,nights' stay
-分,ふん,B2,minute,minutes
-ヶ月,かげつ,C1,month,months
-回,かい,C1,time (any number),times (any number)
-個,こ,C1,article,articles
-歳,さい,D1,year old,years old
-隻,せき,D1,ship,ships
-足,そく,D2,"pair (of shoes, socks, etc.)","pairs (of shoes, socks, etc.)"
-ポンド,ぽんど,E,pound,pounds
-トン,とん,F,ton,tons
-通,つう,F,message,messages
-軒,けん,C2,house,houses
-週間,しゅうかん,D1,week,weeks
+﻿Counter,Reading,Type,Meaning (Singular),Meaning (Plural),Max number,Meaning (1),Meaning (2),Meaning (3),Meaning (4),Meaning (5),Meaning (6),Meaning (7),Meaning (8),Meaning (9),Meaning (10),Irregular reading (1),Irregular reading (2),Irregular reading (3),Irregular reading (4),Irregular reading (5),Irregular reading (6),Irregular reading (7),Irregular reading (8),Irregular reading (9),Irregular reading (10)
+つ,つ,IRREGULAR,thing,things,,,,,,,,,,,,ひとつ,ふたつ,みっつ,よっつ,いつつ,むっつ,ななつ,やっつ,ここのつ,とお
+枚,まい,A1,thin object,thin objects,,,,,,,,,,,,,,,,,,,,,
+本,ほん,B1,long object,long objects,,,,,,,,,,,,,,,,,,,,,
+課,か,C1,lesson,lessons,,,,,,,,,,,,,,,,,,,,,
+冊,さつ,D1,book,books,,,,,,,,,,,,,,,,,,,,,
+頁,ぺーじ,E,page,pages,,,,,,,,,,,,,,,,,,,,,
+頭,とう,F,head of cattle,heads of cattle,,,,,,,,,,,,,,,,,,,,,
+人,にん,A2,person,people,,,,,,,,,,,,ひとり,ふたり,,,,,,,きゅうにん;くにん,
+日,にち,A3,,,,one day; first day (of the month),two days; second day (of the month),three days; third day (of the month),four days; fourth day (of the month),five days; fifth day (of the month),six days; sixth day (of the month),seven days; seventh day (of the month),eight days; eighth day (of the month),nine days; ninth day (of the month),ten days; tenth day (of the month),ついたち;いちにち,ふつか,みっか,よっか,いつか,むいか,なのか,ようか,ここのか,とおか
+晩,ばん,A1,night,nights,,,,,,,,,,,,ひとばん,ふたばん,みばん,よばん,,,ななばん,,,
+倍,ばい,A1,time (as much),times (as much),,,,,,,,,,,,,,,,,,,,,
+番,ばん,A1,,,,number one; first,number two; second,number three; third,number four; fourth,number five; fifth,number six; sixth,number seven; seventh,number eight; eighth,number nine; ninth,number ten; tenth,,,,,,,,,,
+度,ど,A1,time (small numbers),time (small numbers),,,,,,,,,,,,,,,,,,,,,
+畳,じょう,A1,tatami mat,tatami mats,,,,,,,,,,,,,,,,,,,,,
+部,ぶ,A1,part,parts,,,,,,,,,,,,,,,,,,,,,
+面,めん,A1,newspaper page,newspaper pages,,,,,,,,,,,,,,,,,,,,,
+時,じ,A2,o'clock,o'clock,,,,,,,,,,,,,,,,,,,,,
+時間,じかん,A2,hour,hours,,,,,,,,,,,,,,,,,,,,,
+月,がつ,A3,,,12,January,February,March,April,May,June,July,August,September,October,,,,,,,,,,
+羽,わ,A4,bird,birds,,,,,,,,,,,,,,,,,,,,,
+杯,はい,B1,cup,cups,,,,,,,,,,,,,,,,,,,,,
+匹,ひき,B1,small animal,small animals,,,,,,,,,,,,,,,,,,,,,
+泊,はく,B2,night's stay,nights' stay,,,,,,,,,,,,,,,,,,,,,
+分,ふん,B2,minute,minutes,,,,,,,,,,,,,,,,,,,,,
+ヶ月,かげつ,C1,month,months,,,,,,,,,,,,,,,,,,,,,
+回,かい,C1,time,times,,,,,,,,,,,,,,,,,,,,,
+巻,かん,C1,,,,one volume; first volume,two volumes; second volume,three volumes; third volume,four volumes; fourth volume,five volumes; fifth volume,six volumes; sixth volume,seven volumes; seventh volume,eight volumes; eighth volume,nine volumes; ninth volume,ten volumes; tenth volume,,,,,,,,,,
+個,こ,C1,article,articles,,,,,,,,,,,,,,,,,,,,,
+階,かい,C2,,,,first floor,second floor,third floor,fourth floor,fifth floor,sixth floor,seventh floor,eighth floor,ninth floor,tenth floor,,,,,,,,,,
+歳,さい,D1,year old,years old,120,,,,,,,,,,,,,,,,,,,,
+隻,せき,D1,ship,ships,,,,,,,,,,,,,,,,,,,,,
+足,そく,D2,"pair (of shoes, socks, etc.)","pairs (of shoes, socks, etc.)",,,,,,,,,,,,,,,,,,,,,
+ポンド,ぽんど,E,pound,pounds,,,,,,,,,,,,,,,,,,,,,
+等,とう,F,,,,first prize; first rank; first class; etc.,second prize; second rank; second class; etc.,third prize; third rank; third class; etc.,fourth prize; fourth rank; fourth class; etc.,fifth prize; fifth rank; fifth class; etc.,sixth prize; sixth rank; sixth class; etc.,seventh prize; seventh rank; seventh class; etc.,eighth prize; eighth rank; eighth class; etc.,ninth prize; ninth rank; ninth class; etc.,tenth prize; tenth rank; tenth class; etc.,,,,,,,,,,
+トン,とん,F,ton,tons,,,,,,,,,,,,,,,,,,,,,
+通,つう,F,message,messages,,,,,,,,,,,,,,,,,,,,,
+位,い,A1,,,,first place,second place,third place,fourth place,fifth place,sixth place,seventh place,eighth place,ninth place,tenth place,,,,,,,,,,
+インチ,いんち,A1,inch,inches,,,,,,,,,,,,,,,,,,,,,
+駅,えき,A1,station,stations,,,,,,,,,,,,ひとえき,ふたえき,,,,,,,,
+円,えん,A2,yen,yen,,,,,,,,,,,,,,,,,,,,,
+往復,おうふく,A1,round trip,round trips,,,,,,,,,,,,,,,,,,,,,
+画,かく,C1,kanji stroke,kanji strokes,,,,,,,,,,,,,,,,,,,,,
+家族,かぞく,C1,family,families,,,,,,,,,,,,ひとかぞく,ふたかぞく,,,,,,,,
+学期,がっき,A1,semester,semesters,,,,,,,,,,,,,,,,,,,,,
+ガロン,がろん,A1,gallon,gallons,,,,,,,,,,,,,,,,,,,,,
+期,き,C1,term,terms,,,,,,,,,,,,,,,,,,,,,
+機,き,C1,aircraft,aircrafts,,,,,,,,,,,,,,,,,,,,,
+気筒,きとう,C1,cylinder,cylinders,,,,,,,,,,,,,,,,,,,,,
+行,ぎょう,A1,line (of writing),lines (of writing),,,,,,,,,,,,,,,,,,,,,
+曲,きょく,C1,song,songs,,,,,,,,,,,,,,,,,,,,,
+キロ,きろ,C1,kilometer/kilogram,kilometers/kilograms,,,,,,,,,,,,いちきろ,,,,,,,,,
+句,く,C1,haiku,haikus,,,,,,,,,,,,,,,,,,,,,
+グラム,ぐらむ,A1,gram,grams,,,,,,,,,,,,,,,,,,,,,
+桁,けた,C1,digit,digits,,,,,,,,,,,,ひとけた,ふたけた,みけた,よけた,,,,,,
+軒,けん,C2,building,buildings,,,,,,,,,,,,,,,,,,,,,
+間,けん,C2,ken (≈ 1.9 yards),ken (≈ 1.9 yards),,,,,,,,,,,,,,,,,,,,,
+戸,こ,C1,house,houses,,,,,,,,,,,,,,,,,,,,,
+語,ご,A1,word,words,,,,,,,,,,,,,,,,,,,,,
+校,こう,C1,school,schools,,,,,,,,,,,,,,,,,,,,,
+号,ごう,A1,,,,car No. one; building No. one; issue No. one,car No. two; building No. two; issue No. two,car No. three; building No. three; issue No. three,car No. four; building No. four; issue No. four,car No. five; building No. five; issue No. five,car No. six; building No. six; issue No. six,car No. seven; building No. seven; issue No. seven,car No. eight; building No. eight; issue No. eight,car No. nine; building No. nine; issue No. nine,car No. ten; building No. ten; issue No. ten,,,,,,,,,,
+皿,さら,D1,dish/plate,dishes/plates,,,,,,,,,,,,ひとさら,ふたさら,みさら;さんさら,,,,,,,
+字,じ,A1,letter/character,letters/characters,,,,,,,,,,,,,,,,,,,,,
+社,しゃ,D1,company,companies,,,,,,,,,,,,,,,,,,,,,
+周,しゅう,D1,round/lap,rounds/laps,,,,,,,,,,,,,,,,,,,,,
+週間,しゅうかん,D1,week,weeks,,,,,,,,,,,,,,,,,,,,,
+種（類）,しゅ;しゅるい,D1,kind,kinds,,,,,,,,,,,,,,,,,,,,,
+章,しょう,D1,chapter,chapters,,,,,,,,,,,,,,,,,,,,,
+升,しょう,D1,sho (≈ 1.8 liters),sho (≈ 1.8 liters),,,,,,,,,,,,,,,,,,,,,
+食,しょく,D1,meal,meals,,,,,,,,,,,,,,,,,,,,,
+色,しょく,D1,color,colors,,,,,,,,,,,,,,,,,,なないろ,,,
+世紀,せいき,D1,,,,first century,second century,third century,fourth century,fifth century,sixth century,seventh century,eighth century,ninth century,tenth century,,,,,,,,,,
+世帯,せたい,D1,,,,one-household; one family,two-household; two families,three-household; three families,four-household; four families,five-household; five families,six-household; six families,seven-household; seven families,eight-household; eight families,nine-household; nine families,ten-household; ten families,,,,,,,,,,
+世代,せだい,D1,generation,generations,,,,,,,,,,,,,,,,,,,,,
+銭,せん,D1,sen (hundredth of a yen),sen (hundredth of a yen),,,,,,,,,,,,,,,,,,,,,
+センチ,せんち,D1,centimeter,centimeters,,,,,,,,,,,,,,,,,,,,,
+セント,せんと,D1,cent,cents,,,,,,,,,,,,,,,,,,,,,
+ダース,だーす,A1,dozen,dozens,,,,,,,,,,,,,,,,,,,,,
+題,だい,A1,problem/question/title,problems/questions/titles,,,,,,,,,,,,,,,,,,,,,
+台,だい,A1,machine/vehicle,machines/vehicles,,,,,,,,,,,,,,,,,,,,,
+段,だん,A1,step/tier/level,steps/tiers/levels,,,,,,,,,,,,,,,,,,,,,
+段落,だんらく,A1,paragraph,paragraphs,,,,,,,,,,,,,,,,,,,,,
+着,ちゃく,F,article of clothing,articles of clothing,,,,,,,,,,,,,,,,,,,,,
+丁,ちょう,F,"long and narrow tool (guns, scissors, etc.)/block of tofu/serving in a restaurant","long and narrow tools (guns, scissors, etc.)/blocks of tofu/servings in a restaurant",,,,,,,,,,,,,,,,,,,,,
+丁目,ちょうめ,F,,,,first district,second district,third district,fourth district,fifth district,sixth district,seventh district,eighth district,ninth district,tenth district,,,,,,,,,,
+月,つき,IRREGULAR,month (small numbers),months (small numbers),4,,,,,,,,,,,ひとつき,ふたつき,みつき,よつき,,,,,,
+坪,つぼ,F,tsubo (≈ 3.9 square yards),tsubo (≈ 3.9 square yards),,,,,,,,,,,,ひとつぼ,ふたつぼ,,,,,,,,
+滴,てき,F,drop (of liquid),drops (of liquid),,,,,,,,,,,,,,,,,,,,,
+点,てん,F,point,points,,,,,,,,,,,,,,,,,,,,,
+通り,とおり,F,way,ways,,,,,,,,,,,,ひととおり,ふたとおり,,,,,,,,
+ドル,どる,A1,dollar,dollars,,,,,,,,,,,,,,,,,,,,,
+人前,にんまえ,A2,portion,portions,,,,,,,,,,,,,,,,,,,,きゅうにんまえ;くにんまえ,
+年生,ねんせい,A2,,,6,first-year student,second-year student,third-year student,fourth-year student,fifth-year student,sixth-year student,,,,,,,,,,,,,,
+パーセント,ぱーせんと,E,percent,percent,,,,,,,,,,,,,,,,,,,,,
+泊,はく,B2,night stay,night stay,,,,,,,,,,,,,,,,,,,,,
+箱,はこ,B2,box,boxes,,,,,,,,,,,,ひとはこ,ふたはこ,,,,,,,,
+発,はつ,B2,shot/hit/punch/etc.,shots/hits/punches/etc.,,,,,,,,,,,,,,,,,,,,,
+番線,ばんせん,A1,,,,track one; platform one,track two; platform two,track three; platform three,track four; platform four,track five; platform five,track six; platform six,track seven; platform seven,track eight; platform eight,track nine; platform nine,track ten; platform ten,,,,,,,,,,
+番地,ばんち,A1,,,,house No. one,house No. two,house No. three,house No. four,house No. five ,house No. six,house No. seven,house No. eight,house No. nine,house No. ten,,,,,,,,,,
+秒,びょう,A1,second,seconds,,,,,,,,,,,,,,,,,,,,,
+フィート,ふぃーと,A1,foot,feet,,,,,,,,,,,,,,,,,,,,,
+文,ぶん,A1,sentence,sentences,,,,,,,,,,,,,,,,,,,,,
+遍,へん,B1,time (repetitive action),times (repetitive action),,,,,,,,,,,,,,,,,,,,,
+歩,ほ,B2,step,steps,,,,,,,,,,,,,,,,,,,,,
+ボルト,ぼると,A1,volt,volts,,,,,,,,,,,,,,,,,,,,,
+間,ま,IRREGULAR,room,rooms,2,,,,,,,,,,,ひとま,ふたま,,,,,,,,
+名,めい,A1,person (polite),people (polite),,,,,,,,,,,,,,,,,,,,,
+メートル,めーとる,A1,meter,meters,,,,,,,,,,,,,,,,,,,,,
+問,もん,A1,problem,problems,,,,,,,,,,,,,,,,,,,,,
+ヤード,やーど,A1,yard,yards,,,,,,,,,,,,,,,,,,,,,
+山,やま,IRREGULAR,pile,piles,2,,,,,,,,,,,ひとやま,ふたやま,,,,,,,,
+里,り,A1,ri (≈ 2.5 miles),ri (≈ 2.5 miles),,,,,,,,,,,,,,,,,,,,,
+リットル,りっとる,A1,liter,liters,,,,,,,,,,,,,,,,,,,,,
+割,わり,A1,tenth,tenths,,,,,,,,,,,,,,,,,,,,,
+ワット,わっと,A1,watt,watts,,,,,,,,,,,,,,,,,,,,,

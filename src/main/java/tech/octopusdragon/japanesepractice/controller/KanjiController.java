@@ -174,14 +174,14 @@ public abstract class KanjiController {
 		double curX = x - BRUSH_SIZE/2;
 		double curY = y - BRUSH_SIZE/2;
 		gc.fillRect(curX, curY, BRUSH_SIZE, BRUSH_SIZE);
-		lastX = curX;
-		lastY = curY;
+		lastX = x;
+		lastY = y;
 	}
 	
 	private void draw(Event event, double x, double y) {
 		GraphicsContext gc = ((Canvas) event.getSource()).getGraphicsContext2D();
-		double curX = x - BRUSH_SIZE/2;
-		double curY = y - BRUSH_SIZE/2;
+		double curX = x;
+		double curY = y;
 		gc.strokeLine(lastX, lastY, curX, curY);
 		lastX = curX;
 		lastY = curY;

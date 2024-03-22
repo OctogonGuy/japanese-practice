@@ -17,5 +17,6 @@ C2,
 D1,
 D2,
 E,
-F
+F,
+IRREGULAR
 }

@@ -17,12 +17,28 @@ public class Counter {
 	private Map<Integer, List<String>> readings;
 	// All English number + counter words
 	private Map<Integer, String> meanings;
+	// Maximum number that can be attached to this counter
+	private int maxNumber;
 	
-	public Counter(String counterStr) {
+	/**
+	 * Constructs a counter
+	 * @param counterStr The counter as a string
+	 * @param maxNumber Maximum number that can be attached to this counter
+	 * or -1 if ther is no maximum
+	 */
+	public Counter(String counterStr, int maxNumber) {
 		this.counterStr = counterStr;
+		this.maxNumber = maxNumber;
 		kanjiRepresentations = new HashMap<Integer, String>();
 		readings = new HashMap<Integer, List<String>>();
 		meanings = new HashMap<Integer, String>();
+	}
+
+	/**
+	 * @return the counter as a string
+	 */
+	public String getCounterStr() {
+		return counterStr;
 	}
 
 	/**
@@ -44,6 +60,14 @@ public class Counter {
 	 */
 	public String getMeaning(int number) {
 		return meanings.get(number);
+	}
+
+	/**
+	 * @return the maximum number that can be attached to this counter
+	 * or -1 if ther is no maximum
+	 */
+	public int getMaxNumber() {
+		return maxNumber;
 	}
 	
 	/**

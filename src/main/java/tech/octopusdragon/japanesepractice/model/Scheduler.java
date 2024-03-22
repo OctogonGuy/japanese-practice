@@ -159,6 +159,7 @@ public class Scheduler {
 				
 				CounterType counterType = CounterType.valueOf(tokens[0]);
 				String firstKana = tokens[1];
+				
 				Map<Integer, String> prefixMap = new HashMap<Integer, String>();
 				counterRuleMap.get(counterType).put(firstKana, prefixMap);
 				for (int i = 2; i < tokens.length; i++) {
@@ -187,38 +188,113 @@ public class Scheduler {
 				String[] tokens = line.split(",");
 				
 				String suffix = tokens[0];
-				String reading = tokens[1];
+				String[] readings = tokens[1].split(";");
 				CounterType type = CounterType.valueOf(tokens[2]);
 				String meaningSingular = tokens[3];
 				String meaningPlural = tokens[4];
+				int maxNum;
+				String[] irregularMeanings;
+				String[][] irregularReadings = new String[10][];
+				try {
+					maxNum = Integer.parseInt(tokens[5]);
+				} catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
+					maxNum = -1;
+				}
+				try {
+					irregularMeanings = Arrays.copyOfRange(tokens, 6, 16);
+					for (int i = 0; i < irregularMeanings.length; i++)
+						if (irregularMeanings[i] == null)
+							irregularMeanings[i] = "";
+				} catch (ArrayIndexOutOfBoundsException e) {
+					irregularMeanings = new String[10];
+					for (int i = 0; i < irregularMeanings.length; i++) irregularMeanings[i] = "";
+				}
+				try {
+					String[] irregularReadingsTokens = Arrays.copyOfRange(tokens, 16, 26);
+					for (int i = 0; i < irregularReadingsTokens.length; i++) {
+						if (irregularReadingsTokens[i] == null)
+							irregularReadings[i] = new String[] {""};
+						else
+							irregularReadings[i] = irregularReadingsTokens[i].split(";");
+					}
+				} catch (ArrayIndexOutOfBoundsException e) {
+					irregularReadings = new String[10][1];
+					for (int i = 0; i < irregularReadings.length; i++) irregularReadings[i][0] = "";
+				}
 				
-				Counter counter = new Counter(suffix);
+				Counter counter = new Counter(suffix, maxNum);
 				
 				// Fill all numbers
 				for (Number number : numberList.values()) {
+					// Stop adding numbers if greater than max number
+					if (maxNum != -1 && number.getNumber() > maxNum) break;
+					
 					String kanjiCompound = number.getKanjiNumeral() + suffix;
 					
+					// TODO - redo this
 					List<String> kanaCompounds = new ArrayList<String>();
+					// If there is no specified beginning kana for this counter rule
 					if (counterRuleMap.get(type).containsKey("") && counterRuleMap.get(type).get("").containsKey(number.getNumber())) {
 						String[] numberReadings = counterRuleMap.get(type).get("").get(number.getNumber()).split(";");
 						for (int i = 0; i < numberReadings.length; i++) {
-							kanaCompounds.add(numberReadings[i] + reading);
+							if (!irregularReadings[number.getNumber() - 1][0].equals("")) {
+								for (int j = 0; j < irregularReadings[i].length; j++) {
+									kanaCompounds.add(numberReadings[i] + irregularReadings[i][j]);
+								}
+							}
+							else {
+								for (int j = 0; j < readings.length; j++) {
+									kanaCompounds.add(numberReadings[i] + readings[j]);
+								}
+							}
 						}
 					}
-					else if (!counterRuleMap.get(type).containsKey("") && counterRuleMap.get(type).get(reading.substring(0, 1)).containsKey(number.getNumber())) {
-						String[] prefixReadings = counterRuleMap.get(type).get(reading.substring(0, 1)).get(number.getNumber()).split(";");
+					// If there is a specified special prefix for the beginning kana
+					else if (!counterRuleMap.get(type).containsKey("") && counterRuleMap.get(type).get(readings[0].substring(0, 1)).containsKey(number.getNumber())) {
+						String[] prefixReadings = counterRuleMap.get(type).get(readings[0].substring(0, 1)).get(number.getNumber()).split(";");
 						for (int i = 0; i < prefixReadings.length; i++) {
-							kanaCompounds.add(prefixReadings[i] + reading.substring(1));
+							if (!irregularReadings[number.getNumber() - 1][0].equals("") && irregularReadings[number.getNumber() - 1][0].length() > 1) {
+								for (int j = 0; j < irregularReadings[number.getNumber() - 1].length; j++) {
+									kanaCompounds.add(irregularReadings[number.getNumber() - 1][j]);
+								}
+							}
+							else if (readings[0].length() > 1) {
+								for (int j = 0; j < readings.length; j++) {
+									kanaCompounds.add(prefixReadings[i] + readings[j].substring(1));
+								}
+							}
+							else {
+								kanaCompounds.add(prefixReadings[i]);
+							}
 						}
 					}
-					else {
+					// If there is not a specified special prefix for the beginning kana
+					else if (type != CounterType.IRREGULAR) {
 						for (int i = 0; i < number.getReadings().size(); i++) {
-							kanaCompounds.add(number.getReadings().get(i) + reading);
+							if (!irregularReadings[number.getNumber() - 1][0].equals("")) {
+								for (int j = 0; j < irregularReadings[number.getNumber() - 1].length; j++) {
+									kanaCompounds.add(irregularReadings[number.getNumber() - 1][j]);
+								}
+							}
+							else {
+								for (int j = 0; j < readings.length; j++) {
+									kanaCompounds.add(number.getReadings().get(i) + readings[j]);
+								}
+							}
+						}
+					}
+					// If there is no counter rule (irregular counter)
+					else {
+						for (int j = 0; j < irregularReadings[number.getNumber() - 1].length; j++) {
+							kanaCompounds.add(irregularReadings[number.getNumber() - 1][j]);
 						}
 					}
 					
 					String meaningCompound;
-					if (number.getNumber() == 1) {
+					if (!irregularMeanings[number.getNumber() - 1].equals("")) {
+						meaningCompound = irregularMeanings[number.getNumber() - 1];
+					}
+					else if (number.getNumber() == 1) {
 						meaningCompound = number.getMeaning() + " " + meaningSingular;
 					}
 					else {
@@ -374,11 +450,18 @@ public class Scheduler {
 	
 	/**
 	 * Generates a random number
+	 * @param counter The counter to attach the number to (necessary to determine max number)
 	 * @return Number
 	 */
-	public static int nextNumber() {
+	public static int nextNumber(Counter counter) {
 		Random rand = new Random();
-		int number = rand.nextInt(9) + 1;
+		int number;
+		if (counter.getMaxNumber() == -1) {
+			number = rand.nextInt(10) + 1;
+		}
+		else {
+			number = Math.min(rand.nextInt(counter.getMaxNumber()), 9) + 1;
+		}
 		return number;
 	}
 }

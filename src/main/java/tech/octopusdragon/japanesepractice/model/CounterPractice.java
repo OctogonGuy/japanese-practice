@@ -39,7 +39,7 @@ public class CounterPractice {
 	 */
 	public void next() {
 		curCounter = Scheduler.nextCounter();
-		curNumber = Scheduler.nextNumber();
+		curNumber = Scheduler.nextNumber(curCounter);
 	}
 
 	/**
