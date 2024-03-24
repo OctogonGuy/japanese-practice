@@ -2,8 +2,8 @@ package tech.octopusdragon.japanesepractice.controller;
 
 import java.awt.Desktop;
 import java.io.IOException;
+import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -87,7 +87,7 @@ public abstract class KanjiController {
 		for (Hyperlink hyperlink : new Hyperlink[] {wanikaniLink, jishoLink, kanjipediaLink}) {
 			hyperlink.setOnAction(event -> {
 				try {
-					Desktop.getDesktop().browse(new URL(String.format(linkMap.get(hyperlink), session.getCurKanji())).toURI());
+					Desktop.getDesktop().browse(new URI(String.format(linkMap.get(hyperlink), session.getCurKanji())));
 				} catch (IOException | URISyntaxException e) {
 					e.printStackTrace();
 				}
