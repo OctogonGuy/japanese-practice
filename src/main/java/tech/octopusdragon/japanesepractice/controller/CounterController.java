@@ -1,5 +1,7 @@
 package tech.octopusdragon.japanesepractice.controller;
 
+import java.nio.charset.StandardCharsets;
+
 import org.apache.commons.lang3.StringUtils;
 
 import com.moji4j.MojiConverter;
@@ -128,13 +130,16 @@ public class CounterController {
 			String original = answerTextField.getText();
 			String converted = new MojiConverter().convertRomajiToHiragana(original);
 			if (original.equals(converted)) return;                  
+			converted = new String(converted.getBytes(StandardCharsets.UTF_8), StandardCharsets.UTF_8);
 			String romajiDiff = StringUtils.difference(converted, original);
 			String hiraganaDiff = StringUtils.difference(original, converted);
 			int diffIndex = StringUtils.indexOfDifference(original, converted);
 			// Do nothing if just small っ
-			if (hiraganaDiff.startsWith("っ") && new MojiDetector().hasLatin(hiraganaDiff)) return;
+			if (hiraganaDiff.startsWith("っ") && new MojiDetector().hasRomaji(hiraganaDiff)) return;
 			// Do nothing if ん without double n
 			if (hiraganaDiff.startsWith("ん") && (romajiDiff.equals("n") || romajiDiff.equals("m") || romajiDiff.equals("nm"))) return;
+			// Do nothing if ん with ny
+			if (hiraganaDiff.startsWith("ん") && (romajiDiff.equals("ny"))) return;
 			// Replace double n with ん
 			hiraganaDiff = hiraganaDiff.replace("っん", "ん");
 			int caretDistanceFromEnd = answerTextField.getText().length() - answerTextField.getCaretPosition();
