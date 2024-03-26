@@ -1,17 +1,9 @@
 package tech.octopusdragon.japanesepractice.controller;
 
-import java.nio.charset.StandardCharsets;
-
-import org.apache.commons.lang3.StringUtils;
-
-import com.moji4j.MojiConverter;
-import com.moji4j.MojiDetector;
-
 import tech.octopusdragon.japanesepractice.model.CounterPractice;
 import tech.octopusdragon.japanesepractice.model.PromptLanguage;
 import tech.octopusdragon.japanesepractice.model.Userdata;
-
-import javafx.application.Platform;
+import tech.octopusdragon.japanesepractice.model.Util;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -64,6 +56,10 @@ public class CounterController {
 
 	@FXML
 	private void submit(ActionEvent event) {
+		// If the last character is 'n', change it to 'ん'
+		if (!answerTextField.getText().isEmpty() && answerTextField.getText().charAt(answerTextField.getText().length() - 1) == 'n')
+			answerTextField.replaceText(answerTextField.getText().length() - 1, answerTextField.getText().length(), "ん");
+		
 		submit(answerTextField.getText());
 	}
 
@@ -125,26 +121,6 @@ public class CounterController {
 	
 	@FXML
 	private void convertRomajiToHiragana(KeyEvent event) {
-		// Convert typed romaji characters to hiragana
-		Platform.runLater(() -> {
-			String original = answerTextField.getText();
-			String converted = new MojiConverter().convertRomajiToHiragana(original);
-			if (original.equals(converted)) return;                  
-			converted = new String(converted.getBytes(StandardCharsets.UTF_8), StandardCharsets.UTF_8);
-			String romajiDiff = StringUtils.difference(converted, original);
-			String hiraganaDiff = StringUtils.difference(original, converted);
-			int diffIndex = StringUtils.indexOfDifference(original, converted);
-			// Do nothing if just small っ
-			if (hiraganaDiff.startsWith("っ") && new MojiDetector().hasRomaji(hiraganaDiff)) return;
-			// Do nothing if ん without double n
-			if (hiraganaDiff.startsWith("ん") && (romajiDiff.equals("n") || romajiDiff.equals("m") || romajiDiff.equals("nm"))) return;
-			// Do nothing if ん with ny
-			if (hiraganaDiff.startsWith("ん") && (romajiDiff.equals("ny"))) return;
-			// Replace double n with ん
-			hiraganaDiff = hiraganaDiff.replace("っん", "ん");
-			int caretDistanceFromEnd = answerTextField.getText().length() - answerTextField.getCaretPosition();
-			answerTextField.replaceText(diffIndex, diffIndex + romajiDiff.length(), hiraganaDiff);
-			answerTextField.positionCaret(answerTextField.getText().length() - caretDistanceFromEnd);
-		});
+		Util.convertRomajiToHiragana(answerTextField);
 	}
 }
