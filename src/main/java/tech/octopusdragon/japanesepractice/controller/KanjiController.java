@@ -27,6 +27,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TouchEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.TilePane;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
@@ -38,7 +40,7 @@ public abstract class KanjiController {
 	@FXML private Label messageLabel;
 	@FXML private GridPane infoPane;
 	@FXML private Canvas primarySquare;
-	@FXML private GridPane secondarySquares;
+	@FXML private TilePane secondarySquares;
 	@FXML private Text characterText;
 	@FXML private Label meaningLabel;
 	@FXML private Label readingLabel;
@@ -68,6 +70,13 @@ public abstract class KanjiController {
 			squares.add(((Parent)secondarySquareContainer).getChildrenUnmodifiable().get(0));
 		squares.add(characterText);
 		for (Node square : squares) {
+			// Size drawing squares to parent size
+			if (square.getClass().equals(Canvas.class)) {
+				Platform.runLater(() -> {
+					((Canvas) square).setHeight(((Pane) square.getParent()).getHeight());
+					((Canvas) square).setWidth(((Pane) square.getParent()).getWidth());
+				});
+			}
 			square.disabledProperty().addListener((obs, oldVal, newVal) -> {
 				if (newVal) {
 					square.getParent().getStyleClass().add("disabled-square");

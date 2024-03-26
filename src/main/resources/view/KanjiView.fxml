@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -48,66 +49,56 @@
                <children>
                   <HBox alignment="CENTER" minWidth="0.0" prefHeight="100.0" prefWidth="200.0" styleClass="kanji-box" GridPane.columnSpan="2147483647">
                      <children>
-                        <StackPane maxHeight="-Infinity" maxWidth="-Infinity" styleClass="bigKanjiSquare">
+                        <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="bigKanjiSquare">
                            <children>
-                              <Canvas fx:id="primarySquare" height="100.0" onMousePressed="#drawMouseStart" onMouseDragged="#drawMouse" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" width="100.0" />
+                              <Canvas fx:id="primarySquare" onMouseDragged="#drawMouse" onMousePressed="#drawMouseStart" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" />
                            </children>
                         </StackPane>
-                        <GridPane fx:id="secondarySquares" maxHeight="-Infinity" maxWidth="-Infinity" styleClass="smallKanjiSquares">
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
+                        <TilePane fx:id="secondarySquares" maxHeight="-Infinity" minWidth="-Infinity" prefColumns="4" prefRows="2" styleClass="smallKanjiSquares">
                            <children>
-                              <StackPane maxHeight="-Infinity" maxWidth="-Infinity">
+                              <StackPane>
                                  <children>
-                                    <Canvas height="50.0" onMousePressed="#drawMouseStart" onMouseDragged="#drawMouse" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" width="50.0" />
+                                    <Canvas onMouseDragged="#drawMouse" onMousePressed="#drawMouseStart" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" />
                                  </children>
                               </StackPane>
-                              <StackPane maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="1">
+                              <StackPane>
                                  <children>
-                                    <Canvas height="50.0" onMousePressed="#drawMouseStart" onMouseDragged="#drawMouse" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" width="50.0" />
+                                    <Canvas onMouseDragged="#drawMouse" onMousePressed="#drawMouseStart" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" />
                                  </children>
                               </StackPane>
-                              <StackPane maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="2">
+                              <StackPane>
                                  <children>
-                                    <Canvas height="50.0" onMousePressed="#drawMouseStart" onMouseDragged="#drawMouse" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" width="50.0" />
+                                    <Canvas onMouseDragged="#drawMouse" onMousePressed="#drawMouseStart" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" />
                                  </children>
                               </StackPane>
-                              <StackPane maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="3">
+                              <StackPane>
                                  <children>
-                                    <Canvas height="50.0" onMousePressed="#drawMouseStart" onMouseDragged="#drawMouse" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" width="50.0" />
+                                    <Canvas onMouseDragged="#drawMouse" onMousePressed="#drawMouseStart" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" />
                                  </children>
                               </StackPane>
-                              <StackPane maxHeight="-Infinity" maxWidth="-Infinity" GridPane.rowIndex="1">
+                              <StackPane>
                                  <children>
-                                    <Canvas height="50.0" onMousePressed="#drawMouseStart" onMouseDragged="#drawMouse" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" width="50.0" />
+                                    <Canvas onMouseDragged="#drawMouse" onMousePressed="#drawMouseStart" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" />
                                  </children>
                               </StackPane>
-                              <StackPane maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <StackPane>
                                  <children>
-                                    <Canvas height="50.0" onMousePressed="#drawMouseStart" onMouseDragged="#drawMouse" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" width="50.0" />
+                                    <Canvas onMouseDragged="#drawMouse" onMousePressed="#drawMouseStart" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" />
                                  </children>
                               </StackPane>
-                              <StackPane maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                              <StackPane>
                                  <children>
-                                    <Canvas height="50.0" onMousePressed="#drawMouseStart" onMouseDragged="#drawMouse" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" width="50.0" />
+                                    <Canvas onMouseDragged="#drawMouse" onMousePressed="#drawMouseStart" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" />
                                  </children>
                               </StackPane>
-                              <StackPane maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                              <StackPane>
                                  <children>
-                                    <Canvas height="50.0" onMousePressed="#drawMouseStart" onMouseDragged="#drawMouse" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" width="50.0" />
+                                    <Canvas onMouseDragged="#drawMouse" onMousePressed="#drawMouseStart" onMouseReleased="#drawMouseRelease" onTouchMoved="#drawTouch" onTouchPressed="#drawTouchStart" onTouchReleased="#drawTouchRelease" />
                                  </children>
                               </StackPane>
                            </children>
-                        </GridPane>
-                        <StackPane fx:id="characterBox" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#toggleStrokeOrder" prefHeight="100.0" prefWidth="100.0" styleClass="kanji-container">
+                        </TilePane>
+                        <StackPane fx:id="characterBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#toggleStrokeOrder" styleClass="kanji-container">
                            <children>
                               <Text fx:id="characterText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="kanji" text="漢" StackPane.alignment="CENTER">
                   </Text>
