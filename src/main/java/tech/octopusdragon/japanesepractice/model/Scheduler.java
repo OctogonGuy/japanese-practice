@@ -25,16 +25,19 @@ public class Scheduler {
 	private static final String COUNTER_LIST_FILENAME = "counter_list.csv";
 	private static final String NUMBER_LIST_FILENAME = "number_list.csv";
 	private static final String COUNTER_RULES_FILENAME = "counter_rules.csv";
+	private static final String GRAMMAR_LIST_FILENAME = "grammar.csv";
 	
 	public static List<Kanji> kanjiList;
 	public static List<Predicate> predicateList;
 	public static List<Counter> counterList;
+	public static List<Grammar> grammarList;
 	
 	
 	static {
 		kanjiList = readKanji();
 		predicateList = readPredicates();
 		counterList = readCounters();
+		grammarList = readGrammar();
 	}
 	
 	
@@ -71,6 +74,35 @@ public class Scheduler {
 			e.printStackTrace();
 		}
 		return kanjiList;
+	}
+	
+	
+	/**
+	 * Reads grammar list file
+	 * @return Grammar list
+	 */
+	private static List<Grammar> readGrammar() {
+		grammarList = new ArrayList<Grammar>();
+		// Read grammar list file
+		try {
+			InputStream grammarListInputSteam =
+					Scheduler.class.getResourceAsStream(LIST_DIRECTORY + GRAMMAR_LIST_FILENAME);
+			BufferedReader grammarListFile = new BufferedReader(
+					new InputStreamReader(grammarListInputSteam, "UTF-8"));
+			String line;
+			// Skip header
+			grammarListFile.readLine();
+			while ((line = grammarListFile.readLine()) != null) {
+				String[] tokens = line.split(",");
+				String grammar = tokens[0];
+				int jlpt = tokens.length >= 2 ? Integer.parseInt(tokens[1]) : 0;
+				grammarList.add(new Grammar(grammar, jlpt));
+			}
+			grammarListInputSteam.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return grammarList;
 	}
 	
 	
@@ -436,6 +468,18 @@ public class Scheduler {
 		Random rand = new Random();
 		Counter counter = counterList.get(rand.nextInt(counterList.size()));
 		return counter;
+	}
+	
+	
+	/**
+	 * Generates a random grammar
+	 * @return Grammar
+	 */
+	public static Grammar nextGrammar(List<Integer> jlptLevels) {
+		Random rand = new Random();
+		List<Grammar> filteredGrammarList = grammarList.stream().filter(g -> jlptLevels.contains(g.getJlpt())).collect(Collectors.toList());
+		Grammar grammar = filteredGrammarList.get(rand.nextInt(filteredGrammarList.size()));
+		return grammar;
 	}
 	
 	

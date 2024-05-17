@@ -28,21 +28,21 @@ public enum PredicateGroup {
 	}
 	
 	/**
-	 * Returns a verb group based on their weighted probabilities
+	 * Returns a predicate group based on their weighted probabilities
 	 * @param randNum A random double between 0.0 and 1.0
-	 * @return The corresponding verb group
+	 * @return The corresponding predicate group
 	 */
 	public static PredicateGroup weightedSelection(double randNum) {
 		int totalWeight = 0;
-		for (PredicateGroup verbGroup : PredicateGroup.values()) {
-			totalWeight += verbGroup.weight;
+		for (PredicateGroup predicateGroup : PredicateGroup.values()) {
+			totalWeight += predicateGroup.weight;
 		}
 		double weightedIndex = randNum * totalWeight;
 		int cumulativeWeight = 0;
-		for (PredicateGroup verbGroup : PredicateGroup.values()) {
-			cumulativeWeight += verbGroup.weight;
+		for (PredicateGroup predicateGroup : PredicateGroup.values()) {
+			cumulativeWeight += predicateGroup.weight;
 			if (weightedIndex <= cumulativeWeight) {
-				return verbGroup;
+				return predicateGroup;
 			}
 		}
 		return null;
