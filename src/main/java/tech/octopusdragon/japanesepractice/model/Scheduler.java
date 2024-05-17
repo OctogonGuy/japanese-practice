@@ -95,7 +95,7 @@ public class Scheduler {
 			while ((line = grammarListFile.readLine()) != null) {
 				String[] tokens = line.split(",");
 				String grammar = tokens[0];
-				int jlpt = tokens.length >= 2 ? Integer.parseInt(tokens[1]) : 0;
+				int jlpt = Integer.parseInt(tokens[1]);
 				grammarList.add(new Grammar(grammar, jlpt));
 			}
 			grammarListInputSteam.close();

@@ -70,6 +70,8 @@ public class Userdata {
 	 * @return the counter practice data
 	 */
 	public static CounterPracticeData getCounterPracticeData() {
+		if (userdata.counterPracticeData == null)
+			userdata.counterPracticeData = new CounterPracticeData();
 		return userdata.counterPracticeData;
 	}
 	
@@ -77,6 +79,8 @@ public class Userdata {
 	 * @return the conjugation practice data
 	 */
 	public static ConjugationPracticeData getConjugationPracticeData() {
+		if (userdata.conjugationPracticeData == null)
+			userdata.conjugationPracticeData = new ConjugationPracticeData();
 		return userdata.conjugationPracticeData;
 	}
 	
@@ -84,7 +88,18 @@ public class Userdata {
 	 * @return the kanji practice data
 	 */
 	public static KanjiPracticeData getKanjiPracticeData() {
+		if (userdata.kanjiPracticeData == null)
+			userdata.kanjiPracticeData = new KanjiPracticeData();
 		return userdata.kanjiPracticeData;
+	}
+	
+	/**
+	 * @return the grammar practice data
+	 */
+	public static GrammarPracticeData getGrammarPracticeData() {
+		if (userdata.grammarPracticeData == null)
+			userdata.grammarPracticeData = new GrammarPracticeData();
+		return userdata.grammarPracticeData;
 	}
 	
 	
@@ -94,10 +109,5 @@ public class Userdata {
 	private CounterPracticeData counterPracticeData;
 	private ConjugationPracticeData conjugationPracticeData;
 	private KanjiPracticeData kanjiPracticeData;
-	
-	public Userdata() {
-		counterPracticeData = new CounterPracticeData();
-		conjugationPracticeData = new ConjugationPracticeData();
-		kanjiPracticeData = new KanjiPracticeData();
-	}
+	private GrammarPracticeData grammarPracticeData;
 }

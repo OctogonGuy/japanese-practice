@@ -19,7 +19,6 @@ public class GrammarController {
 	@FXML private CheckBox jlptN3CheckBox;
 	@FXML private CheckBox jlptN2CheckBox;
 	@FXML private CheckBox jlptN1CheckBox;
-	@FXML private CheckBox miscCheckBox;
 	
 	private ObservableList<CheckBox> jlptCheckBoxes;
 	private ObservableList<ReadOnlyBooleanProperty> jlptCheckBoxesSelectedProperties;
@@ -33,10 +32,10 @@ public class GrammarController {
 		// Change JLPT range on selection.
 		// Also prevent less than 1 check box from being selected.
 		jlptCheckBoxes = FXCollections.observableArrayList(
-				miscCheckBox, jlptN1CheckBox, jlptN2CheckBox,
+				jlptN1CheckBox, jlptN2CheckBox,
 				jlptN3CheckBox, jlptN4CheckBox, jlptN5CheckBox);
 		jlptCheckBoxesSelectedProperties = FXCollections.observableArrayList(
-				miscCheckBox.selectedProperty(), jlptN1CheckBox.selectedProperty(), jlptN2CheckBox.selectedProperty(),
+				jlptN1CheckBox.selectedProperty(), jlptN2CheckBox.selectedProperty(),
 				jlptN3CheckBox.selectedProperty(), jlptN4CheckBox.selectedProperty(), jlptN5CheckBox.selectedProperty());
 		for (int i = 0; i < jlptCheckBoxes.size(); i++) {
 			CheckBox checkBox = jlptCheckBoxes.get(i);
@@ -51,7 +50,7 @@ public class GrammarController {
 					return true;
 				else
 					return false;
-			}, miscCheckBox.selectedProperty(), jlptN1CheckBox.selectedProperty(), jlptN2CheckBox.selectedProperty(),
+			}, jlptN1CheckBox.selectedProperty(), jlptN2CheckBox.selectedProperty(),
 					jlptN3CheckBox.selectedProperty(), jlptN4CheckBox.selectedProperty(), jlptN5CheckBox.selectedProperty()));
 		}
 		
@@ -90,11 +89,6 @@ public class GrammarController {
 	@FXML
 	private void toggleJLPTN1(ActionEvent event) {
 		session.toggleJlptLevel(1);
-	}
-
-	@FXML
-	private void toggleMisc(ActionEvent event) {
-		session.toggleMisc();
 	}
 
 	private void next() {

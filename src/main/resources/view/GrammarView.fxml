@@ -24,7 +24,6 @@
                   <CheckBox fx:id="jlptN3CheckBox" focusTraversable="false" mnemonicParsing="false" onAction="#toggleJLPTN3" text="三級" />
                   <CheckBox fx:id="jlptN2CheckBox" focusTraversable="false" mnemonicParsing="false" onAction="#toggleJLPTN2" text="二級" />
                   <CheckBox fx:id="jlptN1CheckBox" focusTraversable="false" mnemonicParsing="false" onAction="#toggleJLPTN1" text="一級" />
-                  <CheckBox fx:id="miscCheckBox" focusTraversable="false" mnemonicParsing="false" onAction="#toggleMisc" text="他" />
                </children>
             </HBox>
             <GridPane VBox.vgrow="ALWAYS">

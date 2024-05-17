@@ -1,9 +1,6 @@
 package tech.octopusdragon.japanesepractice.model;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 /**
  * Contains logic of grammar practice session
@@ -16,7 +13,7 @@ public class GrammarPractice {
 	private List<Integer> jlptLevels;
 	
 	public GrammarPractice() {
-		jlptLevels = new ArrayList<>(IntStream.range(0, 5 + 1).boxed().collect(Collectors.toList()));
+		jlptLevels = Userdata.getGrammarPracticeData().getJlptLevels();
 	}
 	
 	/**
@@ -47,15 +44,7 @@ public class GrammarPractice {
 		else {
 			jlptLevels.add(level);
 		}
+		Userdata.getGrammarPracticeData().setJlptIntervals(jlptLevels);
+		Userdata.save();
 	}
-	
-	public void toggleMisc() {
-		if (jlptLevels.contains(0)) {
-			jlptLevels.remove(new Integer(0));
-		}
-		else {
-			jlptLevels.add(0);
-		}
-	}
-
 }
