@@ -21,19 +21,19 @@ import java.util.stream.Collectors;
 public class Scheduler {
 	private static final String LIST_DIRECTORY = "/lists/";
 	private static final String KANJI_LIST_FILENAME = "kanji_list.csv";
-	private static final String VERB_LIST_FILENAME = "verb_list.csv";
+	private static final String PREDICATE_LIST_NAME = "predicate_list.csv";
 	private static final String COUNTER_LIST_FILENAME = "counter_list.csv";
 	private static final String NUMBER_LIST_FILENAME = "number_list.csv";
 	private static final String COUNTER_RULES_FILENAME = "counter_rules.csv";
 	
-	private static List<Kanji> kanjiList;
-	private static List<Verb> verbList;
-	private static List<Counter> counterList;
+	public static List<Kanji> kanjiList;
+	public static List<Predicate> predicateList;
+	public static List<Counter> counterList;
 	
 	
 	static {
 		kanjiList = readKanji();
-		verbList = readVerbs();
+		predicateList = readPredicates();
 		counterList = readCounters();
 	}
 	
@@ -75,37 +75,49 @@ public class Scheduler {
 	
 	
 	/**
-	 * Reads verb list file
-	 * @return Verb list
+	 * Reads predicate list file
+	 * @return Predicate list
 	 */
-	private static List<Verb> readVerbs() {
-		verbList = new ArrayList<Verb>();
-		// Read verb list file
+	private static List<Predicate> readPredicates() {
+		predicateList = new ArrayList<Predicate>();
+		// Read predicate list file
 		try {
-			InputStream verbListInputStream =
-					Scheduler.class.getResourceAsStream(LIST_DIRECTORY + VERB_LIST_FILENAME);
-			BufferedReader verbListFile = new BufferedReader(
-					new InputStreamReader(verbListInputStream, "UTF-8"));
+			InputStream predicateListInputStream =
+					Scheduler.class.getResourceAsStream(LIST_DIRECTORY + PREDICATE_LIST_NAME);
+			BufferedReader predicateListFile = new BufferedReader(
+					new InputStreamReader(predicateListInputStream, "UTF-8"));
 			String line;
 			// Skip header
-			verbListFile.readLine();
-			while ((line = verbListFile.readLine()) != null) {
-				
+			predicateListFile.readLine();
+			while ((line = predicateListFile.readLine()) != null) {
 				String[] tokens = line.split(",", 4);
 				String dictionaryForm = tokens[0];
 				String reading = tokens[1];
-				VerbGroup verbGroup = VerbGroup.valueOf(tokens[2]);
-				String meaning = tokens[3].replaceAll("\"", "");
-				Verb verb = new Verb(dictionaryForm, reading, verbGroup, meaning);
-				
-				// Add verb to list
-				verbList.add(verb);
+				for (String predicateGroupString : tokens[2].split(";")) {
+					// For predicate groups that don't exist yet
+					try {
+						PredicateGroup.valueOf(predicateGroupString);
+					} catch (IllegalArgumentException e) {
+						continue;
+					}
+					
+					PredicateGroup predicateGroup = PredicateGroup.valueOf(predicateGroupString);
+					String modifiedDictionaryForm = dictionaryForm;
+					String modifiedReading = reading;
+					if (predicateGroup == PredicateGroup.SURU && !dictionaryForm.endsWith("する")) {
+						modifiedDictionaryForm = dictionaryForm + "する";
+						modifiedReading = reading + "する";
+					}
+					Predicate predicate = new Predicate(modifiedDictionaryForm, modifiedReading, predicateGroup);
+					// Add predicate to list
+					predicateList.add(predicate);
+				}
 			}
-			verbListInputStream.close();
+			predicateListInputStream.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return verbList;
+		return predicateList;
 	}
 	
 	
@@ -379,33 +391,33 @@ public class Scheduler {
 	
 	
 	/**
-	 * Generates a random verb
-	 * @return Verb
+	 * Generates a random predicate
+	 * @return Predicate
 	 */
-	public static Verb nextVerb() {
+	public static Predicate nextPredicate() {
 		Random rand = new Random();
-		// Incorporate verb group weighted chances
-		VerbGroup verbGroup = VerbGroup.weightedSelection(rand.nextDouble());
-		List<Verb> filteredVerbList = verbList.stream()
-				.filter(verb -> verb.getVerbGroup() == verbGroup)
+		// Incorporate predicate group weighted chances
+		PredicateGroup predicateGroup = PredicateGroup.weightedSelection(rand.nextDouble());
+		List<Predicate> filteredPredicateList = predicateList.stream()
+				.filter(predicate -> predicate.getPredicateGroup() == predicateGroup)
 				.collect(Collectors.toList());
-		Verb verb = filteredVerbList.get(rand.nextInt(filteredVerbList.size()));
-		return verb;
+		Predicate predicate = filteredPredicateList.get(rand.nextInt(filteredPredicateList.size()));
+		return predicate;
 	}
 	
 	
 	/**
 	 * Generates a random conjugation
-	 * @param The verb to conjugate
+	 * @param The predicate to conjugate
 	 * @return Conjugation
 	 */
-	public static Conjugation nextConjugation(Verb verb) {
+	public static Conjugation nextConjugation(Predicate predicate) {
 		Random rand = new Random();
-		// Remove conjugations that do not exist for the given verb
+		// Remove conjugations that do not exist for the given predicate
 		List<Conjugation> conjugations = new ArrayList<>(Arrays.asList(Conjugation.values()));
 		for (Conjugation conjugation : Conjugation.values()) {
 			try {
-				verb.conjugate(conjugation);
+				predicate.conjugate(conjugation);
 			}
 			catch (InvalidConjugationException e) {
 				conjugations.remove(conjugation);

@@ -1,7 +1,7 @@
 package tech.octopusdragon.japanesepractice.model;
 
 /**
- * Conjugations of Japanese verbs
+ * Conjugations of Japanese predicates
  * @author Alex Gill
  *
  */
@@ -20,7 +20,9 @@ public enum Conjugation {
 	PASSIVE("受身形"),
 	CAUSATIVE("使役形"),
 	POTENTIAL("可能形"),
-	IMPERATIVE("命令形");
+	IMPERATIVE("命令形"),
+	ADVERBIAL("副詞的"),
+	ATTRIBUTIVE("連体形");
 	
 	
 	

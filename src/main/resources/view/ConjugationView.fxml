@@ -17,17 +17,6 @@
    <center>
       <VBox alignment="CENTER">
          <children>
-            <HBox alignment="CENTER" styleClass="radio-button-bar">
-               <children>
-                  <RadioButton fx:id="japaneseRadioButton" focusTraversable="false" mnemonicParsing="false" onAction="#changePromptLanguageToJapanese" text="日本語">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="promptLanguage" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <RadioButton fx:id="englishRadioButton" focusTraversable="false" mnemonicParsing="false" onAction="#changePromptLanguageToEnglish" text="英語" toggleGroup="$promptLanguage" />
-                  <RadioButton fx:id="randomRadioButton" focusTraversable="false" mnemonicParsing="false" onAction="#changePromptLanguageToRandom" text="ランダム" toggleGroup="$promptLanguage" />
-               </children>
-            </HBox>
             <GridPane VBox.vgrow="ALWAYS">
                <columnConstraints>
                   <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />

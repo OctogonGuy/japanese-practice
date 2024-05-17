@@ -1,6 +1,7 @@
 package tech.octopusdragon.japanesepractice.model;
 
-import java.util.Random;
+import java.util.List;
+import java.util.Arrays;
 
 /**
  * Contains logic of conjugation practice session
@@ -9,18 +10,18 @@ import java.util.Random;
  */
 public class ConjugationPractice {
 	
-	private Verb curVerb;
+	private Predicate curPredicate;
 	private Conjugation curConjugation;
 	
 	/**
-	 * Submits a guess of the conjugated form of the current verb
+	 * Submits a guess of the conjugated form of the current predicate
 	 * @param guess The user's guess
 	 * @return whether the user guessed correctly
 	 */
 	public boolean submit(String guess) {
 		boolean correct;
-		String correctAnswer = correctAnswer();
-		if (correctAnswer.equals(guess)) {
+		List<String> correctAnswers = Arrays.asList(correctAnswers());
+		if (correctAnswers.contains(guess)) {
 			Userdata.getConjugationPracticeData().incrementStreak();
 			correct = true;
 		}
@@ -37,54 +38,22 @@ public class ConjugationPractice {
 	 * Moves on to the next prompt
 	 */
 	public void next() {
-		curVerb = Scheduler.nextVerb();
-		curConjugation = Scheduler.nextConjugation(curVerb);
-	}
-	
-	/**
-	 * @return the prompt language
-	 */
-	public PromptLanguage getPromptLanguage() {
-		return Userdata.getConjugationPracticeData().getPromptLang();
-	}
-	
-	/**
-	 * Changes the prompt language
-	 * @param lang The desired prompt language
-	 */
-	public void setPromptLanguage(PromptLanguage promptLang) {
-		Userdata.getConjugationPracticeData().setPromptLang(promptLang);
-		Userdata.save();
+		curPredicate = Scheduler.nextPredicate();
+		curConjugation = Scheduler.nextConjugation(curPredicate);
 	}
 	
 	/**
 	 * @return the current representation of the current number + counter
 	 */
 	public String prompt() {
-		String prompt = "";
-		switch (getPromptLanguage()) {
-		case JAPANESE:
-			prompt = curVerb.getDictionaryForm();
-			break;
-		case ENGLISH:
-			prompt = curVerb.getMeaning();
-			break;
-		case RANDOM:
-			Random rand = new Random();
-			if (rand.nextBoolean())
-				prompt = curVerb.getDictionaryForm();
-			else
-				prompt = curVerb.getMeaning();
-			break;
-		}
-		return prompt;
+		return curPredicate.getDictionaryForm();
 	}
 
 	/**
-	 * @return the current verb
+	 * @return the current predicate
 	 */
-	public Verb getCurVerb() {
-		return curVerb;
+	public Predicate getCurPredicate() {
+		return curPredicate;
 	}
 
 	/**
@@ -95,10 +64,10 @@ public class ConjugationPractice {
 	}
 	
 	/**
-	 * @return the conjugated form of the current verb
+	 * @return the conjugated form of the current predicate
 	 */
-	public String correctAnswer() {
-		return curVerb.conjugate(curConjugation);
+	public String[] correctAnswers() {
+		return curPredicate.conjugate(curConjugation);
 	}
 
 }

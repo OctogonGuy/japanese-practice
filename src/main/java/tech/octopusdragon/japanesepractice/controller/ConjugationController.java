@@ -1,9 +1,13 @@
 package tech.octopusdragon.japanesepractice.controller;
 
 import tech.octopusdragon.japanesepractice.model.ConjugationPractice;
-import tech.octopusdragon.japanesepractice.model.PromptLanguage;
 import tech.octopusdragon.japanesepractice.model.Userdata;
 import tech.octopusdragon.japanesepractice.model.Util;
+
+import java.util.Arrays;
+
+import org.apache.commons.lang3.StringUtils;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -36,21 +40,6 @@ public class ConjugationController {
 		correctAnswerLabel.setVisible(false);
 		submitButton.defaultButtonProperty().bind(submitButton.disabledProperty().not().and(answerTextField.focusedProperty()));
 		nextButton.defaultButtonProperty().bind(submitButton.disabledProperty().and(nextButton.focusedProperty()));
-		
-		switch (session.getPromptLanguage()) {
-		case JAPANESE:
-			japaneseRadioButton.setSelected(true);
-			session.setPromptLanguage(PromptLanguage.JAPANESE);
-			break;
-		case ENGLISH:
-			englishRadioButton.setSelected(true);
-			session.setPromptLanguage(PromptLanguage.ENGLISH);
-			break;
-		case RANDOM:
-			randomRadioButton.setSelected(true);
-			session.setPromptLanguage(PromptLanguage.RANDOM);
-			break;
-		}
 
 		next();
 	}
@@ -69,7 +58,7 @@ public class ConjugationController {
 
 		curStreakLabel.setText(String.valueOf(Userdata.getConjugationPracticeData().getCurStreak()));
 		highestStreakLabel.setText(String.valueOf(Userdata.getConjugationPracticeData().getHighestStreak()));
-		correctAnswerLabel.setText(session.correctAnswer());
+		correctAnswerLabel.setText(StringUtils.strip(Arrays.asList(session.correctAnswers()).stream().map(str -> str + "・").reduce("", String::concat), "・"));
 		if (correct) {
 			correctAnswerLabel.setText("⭕ " + correctAnswerLabel.getText());
 			correctAnswerLabel.getStyleClass().add("correct");
@@ -101,24 +90,6 @@ public class ConjugationController {
 		answerTextField.setDisable(false);
 		submitButton.setDisable(false);
 		nextButton.setDisable(true);
-	}
-	
-	@FXML
-	private void changePromptLanguageToJapanese() {
-		session.setPromptLanguage(PromptLanguage.JAPANESE);
-		dictionaryFormLabel.setText(session.prompt());
-	}
-	
-	@FXML
-	private void changePromptLanguageToEnglish() {
-		session.setPromptLanguage(PromptLanguage.ENGLISH);
-		dictionaryFormLabel.setText(session.prompt());
-	}
-	
-	@FXML
-	private void changePromptLanguageToRandom() {
-		session.setPromptLanguage(PromptLanguage.RANDOM);
-		dictionaryFormLabel.setText(session.prompt());
 	}
 	
 	@FXML
