@@ -39,7 +39,7 @@ public class GrammarController {
 				jlptN3CheckBox.selectedProperty(), jlptN4CheckBox.selectedProperty(), jlptN5CheckBox.selectedProperty());
 		for (int i = 0; i < jlptCheckBoxes.size(); i++) {
 			CheckBox checkBox = jlptCheckBoxes.get(i);
-			checkBox.setSelected(session.getJlptLevels().contains(i));
+			checkBox.setSelected(session.getJlptLevels().contains(i + 1));
 			checkBox.disableProperty().bind(Bindings.createBooleanBinding(() -> {
 				int selectedCount = 0;
 				for (ReadOnlyBooleanProperty booleanProperty : jlptCheckBoxesSelectedProperties) {

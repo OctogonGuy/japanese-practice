@@ -17,7 +17,7 @@ public class GrammarPracticeData {
 	 * Initializes grammar data
 	 */
 	public GrammarPracticeData() {
-		jlptLevels = new ArrayList<>(IntStream.range(0, 5 + 1).boxed().collect(Collectors.toList()));
+		jlptLevels = new ArrayList<>(IntStream.range(1, 5 + 1).boxed().collect(Collectors.toList()));
 	}
 	
 	/**
