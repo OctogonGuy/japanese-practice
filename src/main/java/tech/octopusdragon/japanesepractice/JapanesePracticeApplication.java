@@ -6,6 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.Objects;
+
 /**
  * A program that lets you practice kanji, conjugation, counters, etc.
  * @author Alex Gill
@@ -18,9 +20,9 @@ public class JapanesePracticeApplication extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("/view/MainView.fxml"));
+		Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/MainView.fxml")));
 		Scene scene = new Scene(root);
-		scene.getStylesheets().add(getClass().getResource("/styles/main.css").toExternalForm());
+		scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/styles/main.css")).toExternalForm());
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("日本語の練習");
 		primaryStage.show();
@@ -36,18 +38,16 @@ public class JapanesePracticeApplication extends Application {
 	 * @param stage The stage
 	 */
 	private void setMinWindowSize(Stage stage) {
-		double sceneX = stage.getScene().getX();
-		double sceneY = stage.getScene().getY();
 		double windowWidth = stage.getScene().getWindow().getWidth();
 		double windowHeight = stage.getScene().getWindow().getHeight();
 		double stageWidth = stage.getScene().getWidth();
 		double stageHeight = stage.getScene().getHeight();
 
 		// Calculate top, bottom, left, and right window insets
-		double leftInsets = sceneX;
-		double topInsets = sceneY;
-		double rightInsets = windowWidth - stageWidth - sceneX;
-		double bottomInsets = windowHeight - stageHeight - sceneY;
+		double leftInsets = stage.getScene().getX();
+		double topInsets = stage.getScene().getY();
+		double rightInsets = windowWidth - stageWidth - leftInsets;
+		double bottomInsets = windowHeight - stageHeight - topInsets;
 
 		// Set stage's minimum width and height, accounting for the decorations
 		stage.setMinWidth(MIN_WIDTH + leftInsets + rightInsets);

@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="japanese-practice:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/japanese_practice_jar</output-path>
+    <root id="archive" name="japanese-practice.jar">
+      <element id="module-output" name="japanese-practice" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/moji4j-1.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

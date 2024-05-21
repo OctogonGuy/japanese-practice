@@ -7,11 +7,11 @@ package tech.octopusdragon.japanesepractice.model;
  */
 public enum Conjugation {
 	INF_NONPAST("常体 非過去・肯定形"),
-	INF_PAST("常体　過去形・肯定形"),
+	INF_PAST("常体　過去・肯定形"),
 	INF_NEG_NONPAST("常体　非過去・否定形"),
 	INF_NEG_PAST("常体　過去・否定形"),
 	FORMAL_NONPAST("敬体 非過去・肯定形"),
-	FORMAL_PAST("敬体　過去形・肯定形"),
+	FORMAL_PAST("敬体　過去・肯定形"),
 	FORMAL_NEG_NONPAST("敬体　非過去・否定形"),
 	FORMAL_NEG_PAST("敬体　過去・否定形"),
 	CONDITIONAL("仮定形"),
