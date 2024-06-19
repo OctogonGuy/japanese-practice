@@ -1,1 +1,5 @@
-This is a program that lets you practice kanji, conjugation, counters, etc.
+- Kanji practice (漢字): Information about a kanji character will be presented. Try to write it from memory. After showing the correct answer, use the opportunity to practice writing it more if need be. Then, indicate whether you wrote it correctly or not. In learn mode (習得), new kanji characters will be presented. In review mode (復習), review previously learned kanji. You will be shown the kanji more or less in the future depending on whether you  marked it as correct or incorrect.
+- Conjugation practice (活用): Practice conjugating verbs, nouns, na-adjectives, and i-adjectives. You will be shown a word and a form to which it must be conjugated. You can type your answer in the text box, and you will be evaluated based on whether you answered correctly.
+- Counter practice (助数詞): Practice guessing the reading for a number and counter combination. You can choose whether to see the word in kanji, in English, or a random choice between either. You can type your answer in the text box, and you will be evaluated based on whether you answered correctly.
+- Grammar practice (文法): You will be presented with a piece of grammar. Try to form a sentence using that grammar.
+- Vocabulary practice (単語): You will be presented with a word. Try to form a sentence using that word.
